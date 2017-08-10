@@ -1,3 +1,5 @@
+Plug 'tpope/vim-sensible'
+
 " --- UI ---
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
