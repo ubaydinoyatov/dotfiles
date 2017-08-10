@@ -148,7 +148,7 @@ let g:rooter_silent_chdir = 1
 
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree']
 
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
 
 " Start Banner
 let g:startify_files_number = 6
