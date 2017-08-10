@@ -2,15 +2,15 @@
 " Autocomplete
 "=====================================================
 
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 " Use smartcase.
 let g:deoplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:deoplete#sources#syntax#min_keyword_length = 3
-
+let g:deoplete#sources#ternjs#filetypes = [
+  \ 'jsx',
+  \ 'javascript',
+  \ 'javascript.jsx',
+  \ ]
 
 "=====================================================
 " Languages support
@@ -33,10 +33,6 @@ autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal commentstring=//\ %s
 autocmd FileType javascript let b:javascript_fold = 0
-let g:deoplete#sources#ternjs#filetypes = [
-  \ 'jsx',
-  \ 'javascript.jsx',
-  \ ]
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
