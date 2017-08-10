@@ -47,18 +47,6 @@ nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 " http://forrst.com/posts/Use_w_to_sudo_write_a_file_with_Vim-uAN
 cnoremap w!! %!sudo tee > /dev/null %
 
-" Quickly add empty lines
-nnoremap <silent> [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>
-nnoremap <silent> ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-
-" [b or ]n go to previous or next buffer
-nnoremap <silent> [b :<c-u>bN<cr>
-nnoremap <silent> ]b :<c-u>bn<cr>
-
-" [l or ]l go to next and previous error
-nnoremap <silent> [l :lprevious<cr>
-nnoremap <silent> ]l :lnext<cr>
-
 " Files
 map <C-o> :Files<CR>
 map <Leader>fo :NERDTreeFind<CR>
@@ -73,7 +61,6 @@ nnoremap bs :ChooseWin <CR>
 nnoremap <Leader>wp :call <SID>previous_window() <CR>
 nnoremap <Leader>wn :call <SID>next_window() <CR>
 nnoremap <Leader>tt :TagbarToggle <CR>
-nnoremap <Leader>tal :TaskList <CR>
 nnoremap <Leader>hf :History <CR>
 nnoremap <Leader>hc :History: <CR>
 nnoremap <Leader>hs :History/ <CR>
