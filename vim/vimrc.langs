@@ -33,6 +33,10 @@ autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal commentstring=//\ %s
 autocmd FileType javascript let b:javascript_fold = 0
+let g:deoplete#sources#ternjs#filetypes = [
+  \ 'jsx',
+  \ 'javascript.jsx',
+  \ ]
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
