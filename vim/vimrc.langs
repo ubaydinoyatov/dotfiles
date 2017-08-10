@@ -11,11 +11,6 @@ let g:deoplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:deoplete#sources#syntax#min_keyword_length = 3
 
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-
 
 "=====================================================
 " Languages support

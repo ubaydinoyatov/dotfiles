@@ -60,7 +60,7 @@ nnoremap <silent> [l :lprevious<cr>
 nnoremap <silent> ]l :lnext<cr>
 
 " Files
-map <C-o> :execute 'Files'. FindRootDirectory()<CR>
+map <C-o> :Files<CR>
 map <Leader>fo :NERDTreeFind<CR>
 map <C-p> :NERDTreeToggle<CR>
 map <Leader>fg :Ag<CR>
@@ -103,6 +103,12 @@ map gz# <Plug>(asterisk-gz#)
 
 let g:user_emmet_mode='a'
 let g:user_emmet_leader_key = '<C-e>'
+
+" <Tab>
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
 autocmd FileType diff,git,gina-status,gina-log nnoremap <buffer><silent> q :bd!<CR>
 
