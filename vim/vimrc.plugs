@@ -53,7 +53,7 @@ Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less', 'scss']}
-Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss']}
+Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss', 'javascript', 'javascript.jsx']}
 
 " --- Python ---
 Plug 'klen/python-mode', {'for': 'python'}
