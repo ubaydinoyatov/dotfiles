@@ -36,11 +36,11 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " --- Javascript ---
-Plug 'pangloss/vim-javascript', {'for': ['jsx', 'javascript']}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'mxw/vim-jsx', {'for': ['jsx','javascript']}
-Plug 'leshill/vim-json', {'for': ['javascript','json']}
-Plug 'jaawerth/neomake-local-eslint-first', {'for': ['jsx', 'javascript']}
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+Plug 'leshill/vim-json', {'for': ['json', 'javascript', 'javascript.jsx']}
+Plug 'jaawerth/neomake-local-eslint-first', {'for': ['javascript', 'javascript.jsx']}
+Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 
 " --- HTML, Xml ---
 Plug 'othree/html5.vim', {'for': ['html']}
