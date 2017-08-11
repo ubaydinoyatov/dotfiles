@@ -16,7 +16,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'neomake/neomake'
 
 " --- Autocomplete ---
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'  }
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neoinclude.vim'
@@ -79,3 +79,4 @@ Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
+Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
