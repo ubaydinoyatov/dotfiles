@@ -1,3 +1,5 @@
+call plug#begin()
+
 Plug 'tpope/vim-sensible'
 
 " --- UI ---
@@ -80,3 +82,5 @@ Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
+
+call plug#end()
