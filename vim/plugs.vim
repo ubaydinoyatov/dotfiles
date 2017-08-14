@@ -38,7 +38,7 @@ Plug 'junegunn/fzf.vim'
 " --- Javascript ---
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
-Plug 'leshill/vim-json', {'for': ['json', 'javascript', 'javascript.jsx']}
+Plug 'elzr/vim-json', {'for': ['json', 'javascript', 'javascript.jsx']}
 Plug 'jaawerth/neomake-local-eslint-first', {'for': ['javascript', 'javascript.jsx']}
 Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 
@@ -73,12 +73,12 @@ Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 
 " --- Other ---
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 
 call plug#end()
