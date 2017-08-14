@@ -22,9 +22,6 @@ set noswapfile
 set nobackup
 set tags=./tags,tags;$HOME
 
-set showmatch
-set wildmenu
-
 " set fillchar
 set fillchars+=vert:│
 
@@ -56,6 +53,7 @@ set matchtime=0
 set showmatch
 set showmode
 set complete=.,w,b,u,t
+set wildmenu
 
 " limit completion menu height
 set pumheight=15
