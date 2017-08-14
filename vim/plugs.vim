@@ -1,7 +1,5 @@
 call plug#begin()
 
-Plug 'tpope/vim-sensible'
-
 " --- UI ---
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
@@ -63,7 +61,6 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'python'}
 Plug 'mitsuhiko/vim-python-combined', {'for': 'python'}
 Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
-Plug 'michaeljsmith/vim-indent-object', {'for': ['python', 'vim']}
 
 " --- Markdown ---
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
@@ -75,6 +72,7 @@ Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 
 " --- Other ---
+Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
