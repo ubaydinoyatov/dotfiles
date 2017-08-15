@@ -59,7 +59,7 @@ let g:pymode_lint_checkers = ['pylint']
 let g:pymode_virtualenv = 1
 let g:pymode_python = 'python3'
 
-let g:pymode_breakpoint = 1
+let g:pymode_breakpoint = 0
 
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
@@ -88,7 +88,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:jedi#popup_on_dot = 1         " Enable autocomplete on dot
 let g:jedi#popup_select_first = 0   " Disable first select from auto-complete
 let g:jedi#auto_vim_configuration = 0
-let g:jedi#show_call_signatures = 0
+let g:jedi#show_call_signatures = 1
 
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
   \ formatoptions+=croq softtabstop=4 smartindent
