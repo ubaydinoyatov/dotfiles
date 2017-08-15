@@ -49,11 +49,11 @@ cnoremap w!! %!sudo tee > /dev/null %
 
 " Files
 map <C-o> :Files<CR>
+map <C-e> :Buffers<CR>
 map <Leader>fo :NERDTreeFind<CR>
 map <C-p> :NERDTreeToggle<CR>
 map <Leader>fg :Ag<CR>
 map <Leader>bc :normal! ggVG"+y<CR>
-nnoremap bf :Buffers <CR>
 nnoremap bh :Startify <CR>
 nnoremap bs :ChooseWin <CR>
 
