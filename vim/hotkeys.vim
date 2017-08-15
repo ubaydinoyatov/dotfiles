@@ -26,9 +26,6 @@ xnoremap <Tab> >gv|
 nnoremap > >>_
 nnoremap < <<_
 
-" Use Q format lines
-map Q gq
-
 " Navigation in command line
 cnoremap <C-a> <Home>
 cnoremap <C-l> <Left>
@@ -47,31 +44,32 @@ nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 " http://forrst.com/posts/Use_w_to_sudo_write_a_file_with_Vim-uAN
 cnoremap w!! %!sudo tee > /dev/null %
 
+nmap <C-e> :Buffers<CR>
+nmap <C-t> :TagbarToggle<CR>
+
 " Files
-map <C-o> :Files<CR>
-map <C-e> :Buffers<CR>
-map <Leader>fo :NERDTreeFind<CR>
-map <C-p> :NERDTreeToggle<CR>
-map <Leader>fg :Ag<CR>
-map <Leader>bc :normal! ggVG"+y<CR>
-nnoremap bh :Startify <CR>
-nnoremap bs :ChooseWin <CR>
+nmap <C-o> :Files<CR>
+nmap <C-p> :NERDTreeToggle<CR>
+nmap <Leader>fo :NERDTreeFind<CR>
+nmap <Leader>fg :Ag<CR>
+nmap <Leader>bc :normal! ggVG"+y<CR>
+nmap <Leader>bh :Startify <CR>
+nmap <Leader>bs :ChooseWin <CR>
 
 " Window
-nnoremap <Leader>wp :call <SID>previous_window() <CR>
-nnoremap <Leader>wn :call <SID>next_window() <CR>
-nnoremap <Leader>tt :TagbarToggle <CR>
-nnoremap <Leader>hf :History <CR>
-nnoremap <Leader>hc :History: <CR>
-nnoremap <Leader>hs :History/ <CR>
+nmap <Leader>hf :History <CR>
+nmap <Leader>hc :History: <CR>
+nmap <Leader>hs :History/ <CR>
+nmap <silent>[w :call <SID>previous_window()<cr>
+nmap <silent>]w :call <SID>next_window()<cr>
 
 " Git
-nnoremap <Leader>gk :Agit <CR>
-nnoremap <Leader>gb :AgitFile <CR>
-nnoremap <Leader>gf :GFiles <CR>
-nnoremap <Leader>gl :Gina log <CR>
-nnoremap <Leader>gs :Gina status <CR>
-nnoremap <Leader>gd :Gina diff <CR>
+map <Leader>gk :Agit <CR>
+map <Leader>gf :GFiles <CR>
+map <Leader>gb :AgitFile <CR>
+map <Leader>gl :Gina log <CR>
+map <Leader>gs :Gina status <CR>
+map <Leader>gd :Gina diff <CR>
 
 let g:incsearch#auto_nohlsearch = 1
 map /  <Plug>(incsearch-forward)
