@@ -71,6 +71,17 @@ map <Leader>gl :Gina log <CR>
 map <Leader>gs :Gina status <CR>
 map <Leader>gd :Gina diff <CR>
 
+" Terminal
+map <Leader>sh :sp<CR><C-w><C-w>:term<CR>
+map <Leader>vsh :vsp<CR><C-w><C-w>:term<CR>
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
+tnoremap <C-w>w <C-\><C-n><C-w>w
+tnoremap <C-w>q <C-\><C-n>: bd!<CR>
+
 let g:incsearch#auto_nohlsearch = 1
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
