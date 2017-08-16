@@ -66,6 +66,7 @@ set mouse=nv
 set hidden
 set ttimeout
 set lazyredraw
+set inccommand=nosplit
 
 " menuone: show the pupmenu when only one match
 " disable preview scratch window,
@@ -146,6 +147,7 @@ let g:rooter_silent_chdir = 1
 
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree']
 
+let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
 
 " Start Banner
