@@ -73,6 +73,7 @@ Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 
 " --- Other ---
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
