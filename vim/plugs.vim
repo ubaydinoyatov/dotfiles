@@ -72,7 +72,6 @@ Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 
 " --- Other ---
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
