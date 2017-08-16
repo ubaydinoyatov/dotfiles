@@ -3,6 +3,7 @@
 "=====================================================
 
 set t_Co=256
+set cursorline
 set termguicolors
 set background=dark
 colorscheme gruvbox
@@ -11,15 +12,16 @@ let g:gruvbox_terminal_colors = 1
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 hi VertSplit guibg=#fbf1c7 guifg=#e7e9e1
-set cursorline
+syntax on
 
 set rnu
 set number
-set laststatus=2
 set backspace=indent,eol,start
-set noswapfile
-set nobackup
 set tags=./tags,tags;$HOME
+
+set nobackup
+set noswapfile
+set nowritebackup
 
 " set fillchar
 set fillchars+=vert:│
@@ -42,8 +44,8 @@ set linebreak
 set smarttab
 set tabstop=4
 set expandtab
-set softtabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 " no fold enable
 set nofoldenable
@@ -94,29 +96,11 @@ set ruler
 set gcr=a:blinkon0
 set ttyfast
 
-syntax on
-if has("gui_running")
-  set macmeta
-  set lines=50 columns=125
-endif
-
 " Customize the wildmenu
 set wildmenu
 set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*/*.dSYM/*,*.dylib
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules*
 set wildmode=longest:full,full
-
-autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
-autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
-autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-set nocompatible " be iMproved, required
-autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
-
-" Swaps and backups
-set dir=/tmp
-set backupdir=/tmp
 
 " Hide some panels
 set guioptions-=m " Hide menu bar.
@@ -126,6 +110,23 @@ set guioptions-=r " Hide right-hand scrollbar
 set guioptions-=b " Hide bottom scrollbar
 set guioptions-=e " Hide tab
 set showtabline=0 " Hide tabline
+
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
+autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
+autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+set nocompatible " be iMproved, required
+autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 
 let g:indentLine_setColors = 0
 
