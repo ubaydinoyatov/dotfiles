@@ -79,6 +79,7 @@ Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'
+Plug 'benizi/vim-automkdir'
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 
 call plug#end()
