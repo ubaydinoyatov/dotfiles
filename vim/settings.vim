@@ -16,7 +16,6 @@ set cursorline
 set rnu
 set number
 set laststatus=2
-set pumheight=10
 set backspace=indent,eol,start
 set noswapfile
 set nobackup
@@ -57,7 +56,7 @@ set wildmenu
 
 " limit completion menu height
 set pumheight=15
-set scrolloff=3
+set scrolloff=5
 set incsearch
 set hlsearch
 set laststatus=2

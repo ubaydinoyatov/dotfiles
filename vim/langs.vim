@@ -25,17 +25,13 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " --- HTML ---
-autocmd FileType html setlocal commentstring=<!--\ %s\ -->
 autocmd FileType html,xhtml,jinja,xml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " --- CSS ---
 autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal commentstring=/*\ %s\ */
 
 " --- JavaScript ---
-autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal commentstring=//\ %s
 autocmd FileType javascript let b:javascript_fold = 0
 
 let g:jsx_ext_required = 0
@@ -108,3 +104,7 @@ autocmd FileType xml,html,jinja,htmldjango setlocal expandtab shiftwidth=2 tabst
 autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-e> <Plug>SparkupExecute
 autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-l> <Plug>SparkupNext
 autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
+
+" --- Other ---
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
