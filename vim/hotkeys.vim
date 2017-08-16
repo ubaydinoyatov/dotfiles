@@ -40,10 +40,6 @@ nnoremap <leader>fef :normal! gg=G``<CR>
 " Toggle paste mode
 nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
-" Save a file with sudo
-" http://forrst.com/posts/Use_w_to_sudo_write_a_file_with_Vim-uAN
-cnoremap w!! %!sudo tee > /dev/null %
-
 nmap <C-e> :Buffers<CR>
 nmap <C-t> :TagbarToggle<CR>
 
