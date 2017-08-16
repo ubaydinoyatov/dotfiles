@@ -140,7 +140,7 @@ let g:neomake_list_height = 0
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'GruvboxRedSign'}
 let g:neomake_warning_sign = {'text': '➤', 'texthl': 'GruvboxYellowSign'}
 
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost,BufEnter * Neomake
 
 let g:indentLine_conceallevel = 2
 let g:rooter_silent_chdir = 1

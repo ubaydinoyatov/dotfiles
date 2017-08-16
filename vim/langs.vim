@@ -36,8 +36,8 @@ autocmd FileType javascript let b:javascript_fold = 0
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
-let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 " --- Python ---
 let g:pymode_rope = 0
@@ -50,10 +50,9 @@ let g:pymode_doc_key = 'K'
 let g:pymode_lint = 0
 let g:pymode_lint_write = 0
 let g:pymode_lint_cwindow = 0
-let g:pymode_lint_checkers = ['pylint']
 
-let g:pymode_virtualenv = 1
 let g:pymode_python = 'python3'
+let g:pymode_virtualenv = 1
 
 let g:pymode_breakpoint = 0
 
@@ -62,6 +61,9 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
+let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E402,E128,E225,E231,F403,F405,E126'], }
+
 " Don't autofold code
 let g:pymode_folding = 0
 
@@ -69,8 +71,6 @@ let g:pymode_folding = 0
 let g:pymode_run = 0
 
 let g:pymode_options_colorcolumn = 0
-let g:neomake_python_enabled_makers = ['pylint']
-
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 
 let python_slow_sync=1
