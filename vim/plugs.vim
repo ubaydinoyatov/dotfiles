@@ -30,7 +30,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 
 " --- Files ---
-Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
+Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
