@@ -125,6 +125,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 
 set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
+autocmd FileType hackernews set nonumber norelativenumber colorcolumn=0
 
 let g:email = "ubaidinoyatov@gmail.com"
 let g:username = "Ubayd"
@@ -260,5 +261,11 @@ let g:user_emmet_settings = {
   \ },
   \}
 
-autocmd FileType hackernews set nonumber norelativenumber colorcolumn=0
-autocmd TermOpen * set nonumber norelativenumber colorcolumn=0
+autocmd TermOpen * call HandleTerm()
+
+function HandleTerm()
+  setlocal nonumber
+  setlocal norelativenumber
+  setlocal colorcolumn=0
+  execute 'IndentLinesDisable'
+endfunction
