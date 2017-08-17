@@ -254,4 +254,5 @@ let g:user_emmet_settings = {
   \ },
   \}
 
-au FileType hackernews set nonumber norelativenumber colorcolumn=0
+autocmd FileType hackernews set nonumber norelativenumber colorcolumn=0
+autocmd TermOpen * set nonumber norelativenumber colorcolumn=0
