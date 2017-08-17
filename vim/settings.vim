@@ -30,9 +30,9 @@ set fillchars+=vert:│
 set noshowcmd
 
 " indent
+set cindent
 set autoindent
 set smartindent
-set cindent
 
 " show wildmenu
 set wildmenu
@@ -49,12 +49,11 @@ set softtabstop=4
 
 " no fold enable
 set nofoldenable
-set nowritebackup
+
 set matchtime=0
 set showmatch
 set showmode
 set complete=.,w,b,u,t
-set wildmenu
 
 " limit completion menu height
 set pumheight=15
@@ -63,7 +62,6 @@ set incsearch
 set hlsearch
 set laststatus=2
 set wildignorecase
-set mouse=nv
 set hidden
 set ttimeout
 set lazyredraw
