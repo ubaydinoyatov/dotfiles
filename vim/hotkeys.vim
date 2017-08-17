@@ -70,6 +70,10 @@ nmap <Leader>hc :History: <CR>
 nmap <Leader>hs :History/ <CR>
 nmap <silent>[w :call <SID>previous_window()<cr>
 nmap <silent>]w :call <SID>next_window()<cr>
+nnoremap <silent> <Leader>+ :resize +5<CR>
+nnoremap <silent> <Leader>- :resize -5<CR>
+nnoremap <silent> <Leader>v+ :vertical resize +5<CR>
+nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 
 " Git
 map <Leader>gk :Agit <CR>
