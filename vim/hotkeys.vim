@@ -127,7 +127,7 @@ noremap <expr> <C-f> max([winheight(0) - 2, 1])
 noremap <expr> <C-b> max([winheight(0) - 2, 1])
   \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 
-autocmd FileType diff,git,gina-status,gina-log nnoremap <buffer><silent> q :bd!<CR>
+autocmd FileType diff,git,gina-status,gina-log,hackernews nnoremap <buffer><silent> q :bd!<CR>
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
