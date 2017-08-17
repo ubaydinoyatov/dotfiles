@@ -85,8 +85,9 @@ map <Leader>gs :Gina status <CR>
 map <Leader>gd :Gina diff <CR>
 
 " Terminal
-map <Leader>sh :sp<CR><C-w><C-w>:term<CR>
-map <Leader>vsh :vsp<CR><C-w><C-w>:term<CR>
+nnoremap <Leader>sh :bo sp term://zsh\|resize 10<Cr>i
+nnoremap <Leader>vsh :bo vsp term://zsh<Cr>i
+
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
