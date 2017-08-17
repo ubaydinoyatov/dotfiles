@@ -9,8 +9,8 @@ Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 
 " --- Edit ---
-Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-expand-region'
+Plug 'scrooloose/nerdcommenter'
 
 " --- Lint ---
 Plug 'neomake/neomake'
@@ -80,6 +80,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'aperezdc/vim-template', {'on': 'Template'}
 Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 

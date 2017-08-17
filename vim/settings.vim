@@ -126,6 +126,9 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 
+let g:email = "ubaidinoyatov@gmail.com"
+let g:username = "Ubayd"
+
 let g:indentLine_setColors = 0
 
 let g:tagbar_sort = 0
