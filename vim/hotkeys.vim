@@ -2,11 +2,6 @@
 " User hotkeys
 "=====================================================
 
-" use space as `<Leader>`
-nmap <Space> [SPC]
-inoremap <Space> [SPC]
-vnoremap <Space> [SPC]
-
 let mapleader = ","
 
 " CTRL-Z is Undo
