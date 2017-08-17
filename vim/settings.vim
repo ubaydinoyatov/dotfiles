@@ -14,8 +14,8 @@ set t_8b=[48;2;%lu;%lu;%lum
 hi VertSplit guibg=#fbf1c7 guifg=#e7e9e1
 syntax on
 
-set rnu
 set number
+set relativenumber
 set backspace=indent,eol,start
 set tags=./tags,tags;$HOME
 
@@ -145,7 +145,7 @@ autocmd! BufWritePost,BufEnter * Neomake
 let g:indentLine_conceallevel = 2
 let g:rooter_silent_chdir = 1
 
-let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree']
+let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree', 'hackernews']
 
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
@@ -253,3 +253,5 @@ let g:user_emmet_settings = {
   \   'extends': 'jsx',
   \ },
   \}
+
+au FileType hackernews set nonumber norelativenumber colorcolumn=0
