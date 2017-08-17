@@ -104,6 +104,8 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
 autocmd FileType diff,git,gina-status,gina-log nnoremap <buffer><silent> q :bd!<CR>
 
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
 function! s:next_window() abort
   try

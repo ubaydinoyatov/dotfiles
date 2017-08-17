@@ -192,6 +192,7 @@ let g:startify_list_order = [
   \ ['   Bookmarks:'],
   \ 'bookmarks',
   \ ]
+autocmd FileType startify setl scrolloff=0 nowrap
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1

@@ -76,10 +76,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'benizi/vim-automkdir'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 

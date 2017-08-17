@@ -86,10 +86,10 @@ let g:jedi#popup_select_first = 0   " Disable first select from auto-complete
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = 1
 
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
   \ formatoptions+=croq softtabstop=4 smartindent
   \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   \ smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
