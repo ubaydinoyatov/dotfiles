@@ -146,7 +146,7 @@ autocmd! BufWritePost,BufEnter * Neomake
 let g:indentLine_conceallevel = 2
 let g:rooter_silent_chdir = 1
 
-let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree', 'hackernews']
+let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree', 'man', 'hackernews']
 
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
