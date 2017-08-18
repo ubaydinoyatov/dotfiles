@@ -60,7 +60,6 @@ Plug 'klen/python-mode', {'for': 'python'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'python'}
 Plug 'mitsuhiko/vim-python-combined', {'for': 'python'}
-Plug 'jmcantrell/vim-virtualenv', {'for': 'python'}
 
 " --- Markdown ---
 Plug 'tpope/vim-markdown', {'for': 'markdown'}

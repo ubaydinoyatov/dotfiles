@@ -53,6 +53,8 @@ nnoremap <leader>fef :normal! gg=G``<CR>
 nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
 nmap <C-e> :Buffers<CR>
+nmap <Leader>bd :bd <CR>
+
 nmap <C-t> :TagbarToggle<CR>
 
 " Files
