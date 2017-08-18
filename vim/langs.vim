@@ -54,8 +54,6 @@ let g:pymode_lint_cwindow = 0
 let g:pymode_python = 'python3'
 let g:pymode_virtualenv = 1
 
-let g:pymode_breakpoint = 0
-
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
@@ -67,11 +65,16 @@ let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501,E402,E128,E225,E23
 " Don't autofold code
 let g:pymode_folding = 0
 
-" Get possibility to run Python code
-let g:pymode_run = 0
-
 let g:pymode_options_colorcolumn = 0
-let g:pymode_rope_goto_definition_bind = "<C-]>"
+
+" Get possibility to run Python code
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>ab'
+
+let g:pymode_rope = 0
 
 let python_slow_sync=1
 let python_highlight_all=1

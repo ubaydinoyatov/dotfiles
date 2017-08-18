@@ -11,6 +11,9 @@ Plug 'Yggdroot/indentLine'
 " --- Edit ---
 Plug 'terryma/vim-expand-region'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
 " --- Lint ---
 Plug 'neomake/neomake'
@@ -71,9 +74,6 @@ Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 
 " --- Other ---
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-rooter'
 Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'

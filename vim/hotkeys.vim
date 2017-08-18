@@ -9,8 +9,8 @@ noremap <C-z> u
 inoremap <C-z> <C-O>u
 
 " CTRL-Y is Redo
-noremap <C-y> <C-R>
-inoremap <C-y> <C-O><C-R>
+noremap <C-r> <C-R>
+inoremap <C-r> <C-O><C-R>
 
 " Select blocks after indenting
 xnoremap < <gv
