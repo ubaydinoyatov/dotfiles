@@ -113,6 +113,8 @@ set showtabline=0 " Hide tabline
 set splitbelow
 set splitright
 
+set concealcursor=
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -130,8 +132,6 @@ autocmd FileType hackernews set nonumber norelativenumber colorcolumn=0
 let g:email = "ubaidinoyatov@gmail.com"
 let g:username = "Ubayd"
 
-let g:indentLine_setColors = 0
-
 let g:tagbar_sort = 0
 let g:tagbar_width = 30
 let g:tagbar_compact = 0
@@ -144,10 +144,12 @@ let g:neomake_warning_sign = {'text': '➤', 'texthl': 'GruvboxYellowSign'}
 
 autocmd! BufWritePost,BufEnter * Neomake
 
+let g:indentLine_color_term = 239
+let g:indentLine_concealcursor = ''
 let g:indentLine_conceallevel = 2
-let g:rooter_silent_chdir = 1
-
 let g:indentLine_fileTypeExclude = ['help', 'startify', 'nerdtree', 'man', 'hackernews']
+
+let g:rooter_silent_chdir = 1
 
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
