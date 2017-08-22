@@ -109,4 +109,5 @@ autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-l> <Plug>SparkupNext
 autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}
 
 " --- Other ---
+let g:vim_json_syntax_conceal = 0
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
