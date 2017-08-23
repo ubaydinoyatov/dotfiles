@@ -112,6 +112,11 @@ map z#  <Plug>(asterisk-z#)
 map gz* <Plug>(asterisk-gz*)
 map gz# <Plug>(asterisk-gz#)
 
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+
 " <Tab>
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>

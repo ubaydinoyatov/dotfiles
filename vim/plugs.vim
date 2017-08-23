@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'justinmk/vim-sneak'
 
 " --- Lint ---
 Plug 'neomake/neomake'
