@@ -26,6 +26,7 @@ cat <<WhatWillHappen
 	 to:   '~/.dotfiles/vimrc'
     - install all plugins listed in
          '~/.dotfiles/vim/vimrc.plugs'
+    - also install .gitconfig, .gitignore, .zshrc
 
   If you're not comfortable with these plans,
   you can abort now by pressing <C-c>.
@@ -51,6 +52,26 @@ fi
 
 echo -n "Linking vimrc... "
 ln -s ~/.dotfiles/vimrc $VIMRC
+echo "done."
+
+echo -n "Linking .zshrc... "
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+echo "done."
+
+echo -n "Linking .gitconfig... "
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+echo "done."
+
+echo -n "Linking .gitignore... "
+ln -s ~/.dotfiles/.gitignore ~/.gitignore
+echo "done."
+
+echo -n "Linking .fzf.bash... "
+ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
+echo "done."
+
+echo -n "Linking .fzf.zsh... "
+ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
 echo "done."
 
 echo -n "Installing plugins... "

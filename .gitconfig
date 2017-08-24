@@ -1,0 +1,43 @@
+[user]
+  email = ubaidinoyatov@gmail.com
+  name = Ubayd
+
+[core]
+  editor = "NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+  safecrlf = false
+  # Non-Windows:
+  autocrlf = false
+
+[pull]
+  rebase = TRUE
+
+[merge]
+  summary = true
+  log = true
+
+[diff]
+  algorithm = patience
+  renames = copies
+
+[alias]
+  up = pull --rebase
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  lg = log --pretty=format:\"%C(cyan)%h %C(green)%ad%Creset | %s %C(yellow)%d %C(magenta)[%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  unstage = rm --cached -r
+
+[color]
+  branch = auto
+  diff = auto
+  grep = auto
+  interactive = auto
+  showbranch = auto
+  status = auto
+  ui = on
+
+[help]
+  autocorrect = 3
