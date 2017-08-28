@@ -224,36 +224,25 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-" --- Airline ---
-let g:airline_skip_empty_sections = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_splits = 1
-let g:airline#extensions#tabline#tab_nr_type = 1
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#hunks#enabled = 0
-let g:airline#extensions#tabline#fnamecollapse = 1
-let g:airline#extensions#tabline#fnametruncate = 0
-let g:airline#extensions#tabline#buffers_label = 'BUFFERS'
-let g:airline#extensions#tabline#tabs_label = 'TABS'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
-let g:airline_symbols = {}
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.space = "\ua0"
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.maxlinenr = ' ☰'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " Emmet
 """""""""""""""""""""""""""""""""""""
