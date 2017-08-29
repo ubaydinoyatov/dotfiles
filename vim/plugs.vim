@@ -64,6 +64,10 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'mitsuhiko/vim-jinja', {'for': 'python'}
 Plug 'mitsuhiko/vim-python-combined', {'for': 'python'}
 
+" --- Go ---
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'zchee/deoplete-go', {'for': 'go', 'do': 'make'}
+
 " --- Markdown ---
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
