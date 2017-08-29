@@ -79,11 +79,11 @@ nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 
 " Git
 map <Leader>gk :Agit <CR>
+map <Leader>gd :Gdiff <CR>
 map <Leader>gf :GFiles <CR>
+map <Leader>gs :Gstatus <CR>
 map <Leader>gb :AgitFile <CR>
 map <Leader>gl :Gina log <CR>
-map <Leader>gs :Gina status <CR>
-map <Leader>gd :Gina diff <CR>
 
 " Terminal
 nnoremap <Leader>sh :bo sp term://zsh\|resize 20<Cr>i
@@ -126,7 +126,7 @@ noremap <expr> <C-f> max([winheight(0) - 2, 1])
 noremap <expr> <C-b> max([winheight(0) - 2, 1])
   \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 
-autocmd FileType help,diff,git,gina-status,gina-log,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
+autocmd FileType help,diff,git,gina-log,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
