@@ -22,17 +22,8 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols = {}
 let g:airline_symbols.space = "\ua0"
 let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = ' ☰'
 let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-
-
-let g:airline_section_y = airline#section#create(['ffenc', ' ', '%{strftime("%H:%M")}'])
-let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
-
-let g:airline_section_error = airline#section#create(['neomake_error_count'])
-let g:airline_section_warning = airline#section#create(['neomake_warning_count', 'whitespace'])
-
-let g:airline_exclude_filenames = ['DebuggerWatch', 'DebuggerStack', 'DebuggerStatus']
