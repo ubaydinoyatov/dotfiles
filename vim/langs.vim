@@ -89,12 +89,6 @@ let g:jedi#popup_select_first = 0   " Disable first select from auto-complete
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = 1
 
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4
-  \ formatoptions+=croq softtabstop=4 smartindent
-  \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-  \ smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd CompleteDone * pclose " To close preview window of deoplete automagically
 
@@ -111,7 +105,6 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 
 " --- template language support (SGML / XML too) ---
 let html_no_rendering=1
-autocmd FileType xml,html,jinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-e> <Plug>SparkupExecute
 autocmd FileType html,htmljinja,htmldjango imap <buffer> <c-l> <Plug>SparkupNext
 autocmd FileType htmljinja setlocal commentstring={#\ %s\ #}

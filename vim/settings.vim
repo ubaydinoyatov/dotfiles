@@ -43,9 +43,9 @@ set linebreak
 " tab options:
 set smarttab
 set tabstop=4
-set expandtab
+set noexpandtab
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=0
 
 " no fold enable
 set nofoldenable
@@ -263,6 +263,6 @@ autocmd TermOpen * call HandleTerm()
 function HandleTerm()
   setlocal nonumber
   setlocal norelativenumber
-  setlocal colorcolumn=0
+  setlocal colorcolumn = 0
   execute 'IndentLinesDisable'
 endfunction

@@ -66,6 +66,10 @@ echo -n "Linking .gitignore... "
 ln -s ~/.dotfiles/.gitignore ~/.gitignore
 echo "done."
 
+echo -n "Linking .editorconfig... "
+ln -s ~/.dotfiles/.editorconfig ~/.editorconfig
+echo "done."
+
 echo -n "Linking .fzf.bash... "
 ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
 echo "done."
