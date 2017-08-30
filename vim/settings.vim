@@ -263,6 +263,6 @@ autocmd TermOpen * call HandleTerm()
 function HandleTerm()
   setlocal nonumber
   setlocal norelativenumber
-  setlocal colorcolumn = 0
+  setlocal colorcolumn=0
   execute 'IndentLinesDisable'
 endfunction

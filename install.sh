@@ -26,7 +26,7 @@ cat <<WhatWillHappen
 	 to:   '~/.dotfiles/vimrc'
     - install all plugins listed in
          '~/.dotfiles/vim/vimrc.plugs'
-    - also install .gitconfig, .gitignore, .zshrc
+    - also install gitconfig, gitignore, zshrc, tmux.conf
 
   If you're not comfortable with these plans,
   you can abort now by pressing <C-c>.
@@ -54,28 +54,32 @@ echo -n "Linking vimrc... "
 ln -s ~/.dotfiles/vimrc $VIMRC
 echo "done."
 
-echo -n "Linking .zshrc... "
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
+echo -n "Linking zshrc... "
+ln -s ~/.dotfiles/zshrc ~/.zshrc
 echo "done."
 
-echo -n "Linking .gitconfig... "
+echo -n "Linking tmux.conf... "
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+echo "done."
+
+echo -n "Linking gitconfig... "
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 echo "done."
 
-echo -n "Linking .gitignore... "
-ln -s ~/.dotfiles/.gitignore ~/.gitignore
+echo -n "Linking gitignore... "
+ln -s ~/.dotfiles/gitignore ~/.gitignore
 echo "done."
 
-echo -n "Linking .editorconfig... "
-ln -s ~/.dotfiles/.editorconfig ~/.editorconfig
+echo -n "Linking editorconfig... "
+ln -s ~/.dotfiles/editorconfig ~/.editorconfig
 echo "done."
 
-echo -n "Linking .fzf.bash... "
-ln -s ~/.dotfiles/.fzf.bash ~/.fzf.bash
+echo -n "Linking fzf.bash... "
+ln -s ~/.dotfiles/fzf.bash ~/.fzf.bash
 echo "done."
 
-echo -n "Linking .fzf.zsh... "
-ln -s ~/.dotfiles/.fzf.zsh ~/.fzf.zsh
+echo -n "Linking fzf.zsh... "
+ln -s ~/.dotfiles/fzf.zsh ~/.fzf.zsh
 echo "done."
 
 echo -n "Installing plugins... "
