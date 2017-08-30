@@ -1,39 +1,34 @@
 #!/bin/bash
 set -e
 
-VIMRC=~/.vimrc
-AUTOLOAD=~/.vim/autoload
+BACKDIR=$HOME/.old_configs
+AUTOLOAD=$HOME/.vim/autoload
 VIMEXE=vim
 
 if (which nvim > /dev/null); then
-  VIMRC=~/.config/nvim/init.vim
-  AUTOLOAD=~/.config/nvim/autoload
+  VIMRC=$HOME/.config/nvim/init.vim
+  AUTOLOAD=$HOME/.config/nvim/autoload
   VIMEXE=nvim
 fi
 
 cat <<WhatWillHappen
-
   I detected that you're using $VIMEXE.
-
   I'm going to...
-    - clone dotfiles into '~/.dotfiles'
+    - clone dotfiles into '$HOME/.dotfiles'
     - install vim-plug
     - move your existing vimrc
          from: '$VIMRC'
-	 to:   '$VIMRC.bak'
+   to:   '$VIMRC.bak'
     - symlink
          from: '$VIMRC'
-	 to:   '~/.dotfiles/vimrc'
+   to:   '$HOME/.dotfiles/vimrc'
     - install all plugins listed in
-         '~/.dotfiles/vim/vimrc.plugs'
-    - also install gitconfig, gitignore, zshrc, tmux.conf
-
+         '$HOME/.dotfiles/vim/vimrc.plugs'
+   to:
+    - symlink gitconfig, zshrc, tmux.conf...
   If you're not comfortable with these plans,
   you can abort now by pressing <C-c>.
-
 WhatWillHappen
-
-read THROW_AWAY
 
 echo -n "Installing vim-plug... "
 curl -sfLo $AUTOLOAD/plug.vim --create-dirs \
@@ -41,47 +36,27 @@ curl -sfLo $AUTOLOAD/plug.vim --create-dirs \
 echo "done."
 
 echo -n "Installing dotfiles... "
-git clone --quiet https://github.com/ubaydinoyatov/dotfiles.git ~/.dotfiles
+git clone --quiet https://github.com/ubaydinoyatov/dotfiles.git $HOME/.dotfiles
 echo "done."
 
-if [[ -f $VIMRC ]]; then
-  echo -n "Backing up existing vimrc... "
-  mv $VIMRC $VIMRC.bak
-  echo "done."
+if [[ ! -d $BACKDIR ]]; then
+  mkdir $BACKDIR
 fi
 
-echo -n "Linking vimrc... "
-ln -s ~/.dotfiles/vimrc $VIMRC
-echo "done."
+Files=(vimrc zshrc tmux.conf gitconfig editorconfig fzf.zsh)
 
-echo -n "Linking zshrc... "
-ln -s ~/.dotfiles/zshrc ~/.zshrc
-echo "done."
+for f in "${Files[@]}"; do
+  if [[ -f $HOME/.$f ]]; then
+    if [[ -f $BACKDIR/$f ]]; then
+      rm $BACKDIR/$f
+    fi
 
-echo -n "Linking tmux.conf... "
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-echo "done."
+    echo -n "Backing up existing $f... "
+    mv $HOME/.$f $BACKDIR/$f
+    echo "done"
+  fi
 
-echo -n "Linking gitconfig... "
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-echo "done."
-
-echo -n "Linking gitignore... "
-ln -s ~/.dotfiles/gitignore ~/.gitignore
-echo "done."
-
-echo -n "Linking editorconfig... "
-ln -s ~/.dotfiles/editorconfig ~/.editorconfig
-echo "done."
-
-echo -n "Linking fzf.bash... "
-ln -s ~/.dotfiles/fzf.bash ~/.fzf.bash
-echo "done."
-
-echo -n "Linking fzf.zsh... "
-ln -s ~/.dotfiles/fzf.zsh ~/.fzf.zsh
-echo "done."
-
-echo -n "Installing plugins... "
-command $VIMEXE +PlugInstall +qall
-echo "done."
+  echo -n "Linking $f... "
+  ln -s $HOME/.dotfiles/$f $HOME/.$f
+  echo "done."
+done
