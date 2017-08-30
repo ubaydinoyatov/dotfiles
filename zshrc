@@ -28,17 +28,17 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+export TERM=xterm-256color
 export EDITOR='/usr/local/bin/nvim'
 
 HISTFILE=~/.zsh-history
 SAVEHIST=1000
 
 # use the correct term for ssh
-alias ssh="TERM=xterm-256color ssh"
 alias rm="rm -rf"
 alias tmux="tmux attach || tmux new"
-alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
-alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias v='nvim'
+alias vim='nvim'
 
 # get current ip
 alias getip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"

@@ -260,7 +260,7 @@ let g:user_emmet_settings = {
 
 autocmd TermOpen * call HandleTerm()
 
-function HandleTerm()
+function! HandleTerm()
   setlocal nonumber
   setlocal norelativenumber
   setlocal colorcolumn=0
