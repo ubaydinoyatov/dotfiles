@@ -64,7 +64,6 @@ nmap <Leader>fo :NERDTreeFind<CR>
 nmap <Leader>fg :Ag<CR>
 nmap <Leader>bc :normal! ggVG"+y<CR>
 nmap <Leader>bh :Startify <CR>
-nmap <Leader>bs :ChooseWin <CR>
 
 " Window
 nmap <Leader>hf :History <CR>

@@ -4,7 +4,6 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 't9md/vim-choosewin'
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/indentLine'
 
