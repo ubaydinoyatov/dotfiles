@@ -55,7 +55,7 @@ Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less', 'scss']}
-Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss', 'javascript', 'javascript.jsx']}
+Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss']}
 
 " --- Python ---
 Plug 'klen/python-mode', {'for': 'python'}
@@ -78,7 +78,7 @@ Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 
 " --- Other ---
 Plug 'airblade/vim-rooter'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
