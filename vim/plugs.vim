@@ -83,7 +83,6 @@ Plug 'majutsushi/tagbar'
 Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'vim-utils/vim-man', {'on': ['Man', 'Vman']}
 Plug 'aperezdc/vim-template', {'on': 'Template'}
 Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
