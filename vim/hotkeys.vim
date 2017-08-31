@@ -4,23 +4,6 @@
 
 let mapleader = ","
 
-" CTRL-Z is Undo
-noremap <C-z> u
-inoremap <C-z> <C-O>u
-
-" CTRL-Y is Redo
-noremap <C-r> <C-R>
-inoremap <C-r> <C-O><C-R>
-
-" Select blocks after indenting
-xnoremap < <gv
-xnoremap > >gv|
-
-" Use tab for indenting in visual mode
-xnoremap <Tab> >gv|
-nnoremap > >>_
-nnoremap < <<_
-
 " Duplicate lines
 nnoremap <Leader>d m`YP``
 vnoremap <Leader>d YPgv
@@ -30,7 +13,11 @@ nnoremap <silent><C-s> :<C-u>write<CR>
 vnoremap <silent><C-s> :<C-u>write<CR>
 cnoremap <silent><C-s> <C-u>write<CR>
 
-" move line up / down with Alt + j / k
+" Move right / left
+xnoremap < <gv
+xnoremap > >gv|
+
+" Move up / down with Alt + j / k
 nnoremap ∆ :m .+1<CR>==
 nnoremap ˚ :m .-2<CR>==
 inoremap ∆ <Esc>:m .+1<CR>==gi
@@ -40,37 +27,28 @@ vnoremap ˚ :m '<-2<CR>gv=gv
 
 " Navigation in command line
 cnoremap <C-a> <Home>
-cnoremap <C-l> <Left>
-cnoremap <C-h> <Right>
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
 
 " Set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
-
-" Format the entire file
-nnoremap <leader>fef :normal! gg=G``<CR>
 
 " Toggle paste mode
 nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
 nmap <C-e> :Buffers<CR>
 nmap <Leader>bd :bd <CR>
-
-nmap <C-t> :TagbarToggle<CR>
+nmap <Leader>by :normal! ggVG"+y<CR>
+nmap <Leader>bh :Startify <CR>
 
 " Files
 nmap <C-o> :Files<CR>
+nmap <C-t> :TagbarToggle<CR>
 nmap <C-p> :NERDTreeToggle<CR>
 nmap <Leader>fo :NERDTreeFind<CR>
 nmap <Leader>fg :Ag<CR>
-nmap <Leader>bc :normal! ggVG"+y<CR>
-nmap <Leader>bh :Startify <CR>
 
 " Window
-nmap <Leader>hf :History <CR>
-nmap <Leader>hc :History: <CR>
-nmap <Leader>hs :History/ <CR>
-nmap <silent>[w :call <SID>previous_window()<cr>
-nmap <silent>]w :call <SID>next_window()<cr>
 nnoremap <silent> <Leader>+ :resize +5<CR>
 nnoremap <silent> <Leader>- :resize -5<CR>
 nnoremap <silent> <Leader>v+ :vertical resize +5<CR>
@@ -84,9 +62,13 @@ map <Leader>gs :Gstatus <CR>
 map <Leader>gb :AgitFile <CR>
 map <Leader>gl :Gina log <CR>
 
+nmap <Leader>hf :History <CR>
+nmap <Leader>hc :History: <CR>
+nmap <Leader>hs :History/ <CR>
+
 " Terminal
-nnoremap <Leader>sh :bo sp term://zsh\|resize 20<Cr>i
-nnoremap <Leader>vsh :bo vsp term://zsh<Cr>i
+nnoremap <Leader>ts :bo sp term://zsh\|resize 20<Cr>i
+nnoremap <Leader>tv :bo vsp term://zsh<Cr>i
 
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w>h <C-\><C-n><C-w>h
@@ -125,30 +107,10 @@ noremap <expr> <C-f> max([winheight(0) - 2, 1])
 noremap <expr> <C-b> max([winheight(0) - 2, 1])
   \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 
-autocmd FileType help,diff,git,gina-log,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
-
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-function! s:next_window() abort
-  try
-    exe (winnr() + 1 ) . 'wincmd w'
-  catch
-    exe 1 . 'wincmd w'
-  endtry
-endfunction
-
-function! s:previous_window() abort
-  try
-    if winnr() == 1
-      exe winnr('$') . 'wincmd w'
-    else
-      exe (winnr() - 1 ) . 'wincmd w'
-    endif
-  catch
-    exe winnr('$') . 'wincmd w'
-  endtry
-endfunction
+autocmd FileType help,diff,git,gina-log,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
