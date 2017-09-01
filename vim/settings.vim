@@ -109,7 +109,7 @@ set guioptions-=T " Hide toolbar
 set guioptions-=L " Hide left-hand scrollbar
 set guioptions-=r " Hide right-hand scrollbar
 set guioptions-=b " Hide bottom scrollbar
-set guioptions-=e " Hide tab
+"set guioptions-=e " Hide tab
 set showtabline=0 " Hide tabline
 
 " Open new split panes to right and bottom
