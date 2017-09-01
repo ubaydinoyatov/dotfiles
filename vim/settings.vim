@@ -9,9 +9,6 @@ set background=dark
 colorscheme gruvbox
 let g:gruvbox_terminal_colors = 1
 
-set t_8f=[38;2;%lu;%lu;%lum
-set t_8b=[48;2;%lu;%lu;%lum
-hi VertSplit guibg=#fbf1c7 guifg=#e7e9e1
 syntax on
 
 set number
@@ -74,7 +71,6 @@ set completeopt=menu,menuone,longest
 " Show a vertical line on a 80th character
 set textwidth=80
 set colorcolumn=+1
-highlight ColorColumn ctermbg=DarkGrey
 
 " Mark tabs and trailing spaces
 set list listchars=nbsp:·,tab:→\ ,trail:·,extends:>,precedes:<
@@ -229,34 +225,6 @@ let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 30
-
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-" Emmet
-"""""""""""""""""""""""""""""""""""""
-let g:user_emmet_settings = {
-  \ 'javascript.jsx': {
-  \   'extends': 'jsx',
-  \ },
-  \}
 
 autocmd TermOpen * call HandleTerm()
 
