@@ -75,6 +75,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
+Plug 'tpope/vim-rhubarb'
 
 " --- Other ---
 Plug 'airblade/vim-rooter'

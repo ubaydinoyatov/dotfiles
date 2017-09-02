@@ -30,6 +30,8 @@ cnoremap <C-a> <Home>
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
+inoremap <C-l> <Right>
+
 " Set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
@@ -61,6 +63,7 @@ map <Leader>gf :GFiles <CR>
 map <Leader>gs :Gstatus <CR>
 map <Leader>gb :AgitFile <CR>
 map <Leader>gl :Gina log <CR>
+map <Leader>go :Gbrowse <CR>
 
 nmap <Leader>hf :History <CR>
 nmap <Leader>hc :History: <CR>
