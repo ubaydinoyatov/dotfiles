@@ -2,7 +2,10 @@
 " User hotkeys
 "=====================================================
 
-let mapleader = ","
+let mapleader = '\'
+
+" C-a to select all buffer
+nnoremap <C-a> ggVG
 
 " Duplicate lines
 nnoremap <Leader>d m`YP``
@@ -40,7 +43,6 @@ nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
 nmap <C-e> :Buffers<CR>
 nmap <Leader>bd :bd <CR>
-nmap <Leader>by :normal! ggVG"+y<CR>
 nmap <Leader>bh :Startify <CR>
 
 " Files
@@ -62,12 +64,14 @@ map <Leader>gd :Gdiff <CR>
 map <Leader>gf :GFiles <CR>
 map <Leader>gs :Gstatus <CR>
 map <Leader>gb :AgitFile <CR>
-map <Leader>gl :Gina log <CR>
+map <Leader>gl :Commits <CR>
 map <Leader>go :Gbrowse <CR>
 
 nmap <Leader>hf :History <CR>
 nmap <Leader>hc :History: <CR>
 nmap <Leader>hs :History/ <CR>
+
+nnoremap <silent> L :Lines<CR>
 
 " Terminal
 nnoremap <Leader>ts :bo sp term://zsh\|resize 20<Cr>i
@@ -114,6 +118,9 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
 nnoremap <leader><space> :nohlsearch<CR>
 
 autocmd FileType help,diff,git,gina-log,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"

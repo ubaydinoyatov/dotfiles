@@ -27,7 +27,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neopairs.vim'
 Plug 'jiangmiao/auto-pairs'
 
-" --- incsearch ---
+" --- search ---
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 
