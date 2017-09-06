@@ -74,7 +74,6 @@ Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
-Plug 'lambdalisue/gina.vim', {'on': 'Gina'}
 Plug 'tpope/vim-rhubarb'
 
 " --- Other ---
@@ -83,7 +82,6 @@ Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'aperezdc/vim-template', {'on': 'Template'}
 Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 

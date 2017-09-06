@@ -125,9 +125,6 @@ set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 autocmd FileType hackernews set nonumber norelativenumber colorcolumn=0
 
-let g:email = "ubaidinoyatov@gmail.com"
-let g:username = "Ubayd"
-
 let g:tagbar_sort = 0
 let g:tagbar_width = 30
 let g:tagbar_compact = 0
