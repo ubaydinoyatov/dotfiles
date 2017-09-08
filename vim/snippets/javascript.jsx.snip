@@ -1,0 +1,213 @@
+# React class
+snippet rcl
+abbr React Class
+options head
+  /*
+  * $1
+  */
+  import React, { Component } from 'react';
+  import PropTypes from 'prop-types';
+
+
+  class ${1:MyComponent} extends Component {
+    static propTypes = {
+      ${2}: PropTypes.${3}
+    }
+
+    render() {
+      return (
+        <${0}>
+      );
+    }
+  }
+
+
+  export default $1;
+
+# React Redux class
+snippet rrcl
+abbr React Redux Class
+options head
+  /*
+  * $1
+  */
+  import React, { Component } from 'react';
+  import PropTypes from 'prop-types';
+  import { connect } from 'react-redux';
+  import { bindActionCreators } from 'redux';
+
+
+  const mapStateToProps = state => ({
+    ${2}
+  });
+
+  const mapDispatchToProps = dispatch => bindActionCreators({
+    ${3}
+  }, dispatch);
+
+
+  class ${1:Name} extends Component {
+    static propTypes = {
+      ${4}: PropTypes.${5},
+    }
+
+    render() {
+      return (
+        <${0}>
+      );
+    }
+  }
+
+
+  export default connect(mapStateToProps, mapDispatchToProps)($1);
+
+# React Functional Component
+snippet rco
+abbr React Functional Component
+options head
+  /*
+  * $1
+  */
+  import React from 'react';
+  import PropTypes from 'prop-types';
+
+
+  const ${1:Name} = ({ ${2} }) => (
+    <${0}>
+  );
+
+  $1.propTypes = {
+    $2: PropTypes.${4},
+  };
+
+  export default $1;
+
+# React constructor
+snippet rcon
+abbr React constructor
+options head
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      ${1}: ${0},
+    };
+  }
+
+# Proptypes for React Class
+snippet rcpt
+abbr propTypes
+options head
+  static propTypes = {
+    ${1}: PropTypes.${0},
+  };
+
+# Default props for React Class
+snippet rcdp
+abbr defaultProps
+options head
+  static defaultProps = {
+    ${1}: ${0},
+  };
+
+# Proptypes for Presentational component
+snippet rpt
+abbr propTypes
+options head
+  ${1}.propTypes = {
+    ${2}: PropTypes.${0},
+  };
+
+# Default props for Presentational component
+snippet rdp
+abbr defaultProps
+options head
+  ${1}.defaultProps = {
+    ${2}: ${0},
+  };
+
+# Lifecycle Methods
+snippet rcdm
+abbr componentDidMount
+options head
+  componentDidMount() {
+    ${0}
+  }
+
+snippet rcwm
+abbr componentWillMount
+options head
+  componentWillMount() {
+    ${0}
+  }
+
+snippet rcsu
+abbr shouldComponentUpdate
+options head
+  shouldComponentUpdate() {
+    ${0}
+  }
+
+snippet rcwu
+abbr componentWillUpdate
+options head
+  componentWillUpdate() {
+    ${0}
+  }
+
+snippet rcdu
+abbr componentDidUpdate
+options head
+  componentDidUpdate() {
+    ${0}
+  }
+
+snippet rcrp
+abbr componentWillReceiveProps
+options head
+  componentWillReceiveProps(newProps${1}) {
+    ${0}
+  }
+
+snippet rcu
+abbr componentWillUnmount
+options head
+  componentWillUnmount() {
+    ${0}
+  }
+
+# State
+snippet rss
+abbr set State
+options head
+  this.setState({
+    ${1}: ${0},
+  });
+
+# ref
+snippet ref
+abbr ref
+options head
+  ref={${1:ref} => { this.${2:name} = $1; }}
+
+# Redux Constants
+snippet rcs
+abbr Redux Action Constant
+options head
+  export const ${1} = '${0}$1';
+
+# export function
+snippet efunc
+abbr export function
+options head
+  export function ${1:function_name}(${2:argument}) {
+    ${0:TARGET}
+  }
+
+# export generator
+snippet egen
+abbr export function generator
+options head
+  export function* ${1:function_name}(${2:argument}) {
+    ${0:TARGET}
+  }
