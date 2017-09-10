@@ -36,21 +36,21 @@ cnoremap <C-l> <Right>
 inoremap <C-l> <Right>
 
 " Set text wrapping toggles
-nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+nnoremap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
 " Toggle paste mode
-nmap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
+nnoremap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
-nmap <C-e> :Buffers<CR>
-nmap <Leader>bd :bd <CR>
-nmap <Leader>bh :Startify <CR>
+nnoremap <C-e> :Buffers<CR>
+nnoremap <Leader>bd :bd <CR>
+nnoremap <Leader>bh :Startify <CR>
 
 " Files
-nmap <C-o> :Files<CR>
-nmap <C-t> :TagbarToggle<CR>
-nmap <C-p> :NERDTreeToggle<CR>
-nmap <Leader>fo :NERDTreeFind<CR>
-nmap <Leader>fg :Ag<CR>
+nnoremap <C-o> :Files<CR>
+nnoremap <C-t> :TagbarToggle<CR>
+nnoremap <C-p> :NERDTreeToggle<CR>
+nnoremap <Leader>fo :NERDTreeFind<CR>
+nnoremap <Leader>fg :Ag<CR>
 
 " Window
 nnoremap <silent> <Leader>+ :resize +5<CR>
@@ -59,19 +59,19 @@ nnoremap <silent> <Leader>v+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 
 " Git
-map <Leader>gk :Agit <CR>
-map <Leader>gd :Gdiff <CR>
-map <Leader>gf :GFiles <CR>
-map <Leader>gs :Gstatus <CR>
-map <Leader>gb :AgitFile <CR>
-map <Leader>gl :Commits <CR>
-map <Leader>go :Gbrowse <CR>
+nnoremap <Leader>gk :Agit <CR>
+nnoremap <Leader>gd :Gdiff <CR>
+nnoremap <Leader>gf :GFiles <CR>
+nnoremap <Leader>gs :Gstatus <CR>
+nnoremap <Leader>gb :AgitFile <CR>
+nnoremap <Leader>gl :Commits <CR>
+nnoremap <Leader>go :Gbrowse <CR>
 
-nmap <Leader>hf :History <CR>
-nmap <Leader>hc :History: <CR>
-nmap <Leader>hs :History/ <CR>
+nnoremap <Leader>hf :History <CR>
+nnoremap <Leader>hc :History: <CR>
+nnoremap <Leader>hs :History/ <CR>
 
-nnoremap <silent> L :Lines<CR>
+nnoremap <C-l> :Lines<CR>
 
 " Terminal
 nnoremap <Leader>ts :bo sp term://zsh\|resize 20<Cr>i
