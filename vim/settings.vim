@@ -76,7 +76,11 @@ set colorcolumn=+1
 set list listchars=nbsp:·,tab:→\ ,trail:·,extends:>,precedes:<
 set listchars=tab:>·,trail:·,nbsp:¬
 
+" Set character encoding to use in vim
 set encoding=utf-8
+
+" Auto reload changed files
+set autoread
 
 " interaction
 set mouse=a                           " enable mouse support
@@ -189,7 +193,7 @@ let g:startify_list_order = [
   \ ['   Bookmarks:'],
   \ 'bookmarks',
   \ ]
-autocmd FileType startify setl scrolloff=0 nowrap
+autocmd FileType startify setlocal scrolloff=0 nowrap
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1

@@ -28,6 +28,13 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
+" Replace
+nnoremap <leader>s :%s//<left>
+vnoremap <leader>s :s//<left><Paste>
+
+" Moving between splits
+noremap <leader>w <C-w>w
+
 " Navigation in command line
 cnoremap <C-a> <Home>
 cnoremap <C-h> <Left>
@@ -114,6 +121,9 @@ noremap <expr> <C-f> max([winheight(0) - 2, 1])
 noremap <expr> <C-b> max([winheight(0) - 2, 1])
   \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 
+" Cursor position after expanding tag
+autocmd FileType html,xhtml,xml,javascript.jsx inoremap <expr> <CR> TagExpander()
+
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
@@ -124,4 +134,22 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+
+function! TagExpander()
+  let line   = getline(".")
+  let col    = col(".")
+  let first  = line[col-2]
+  let second = line[col-1]
+  let third  = line[col]
+
+  if first ==# ">"
+    if second ==# "<" && third ==# "/"
+      return "\<CR>\<C-o>==\<C-o>O"
+    else
+      return "\<CR>"
+    endif
+  else
+    return "\<CR>"
+  endif
 endfunction

@@ -47,8 +47,8 @@ Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do':
 " --- HTML, Xml ---
 Plug 'othree/html5.vim', {'for': ['html']}
 Plug 'mattn/emmet-vim', {'on': 'EmmetInstall'}
-Plug 'sukima/xmledit', {'for': ['html' , 'xhtml' , 'xml' , 'jinja']}
-Plug 'Valloric/MatchTagAlways', {'for': ['html' , 'xhtml' , 'xml' , 'jinja']}
+Plug 'mitsuhiko/vim-jinja', {'for': ['html', 'htm']}
+Plug 'Valloric/MatchTagAlways', {'for': ['html' , 'xhtml' , 'xml']}
 
 " --- Styles ---
 Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
@@ -60,7 +60,6 @@ Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss']}
 " --- Python ---
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
-Plug 'mitsuhiko/vim-jinja', {'for': 'python'}
 Plug 'mitsuhiko/vim-python-combined', {'for': 'python'}
 
 " --- Go ---
