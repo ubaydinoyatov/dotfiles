@@ -10,13 +10,11 @@ options head
 
 
   class ${1:MyComponent} extends Component {
-    static propTypes = {
-      ${2}: PropTypes.${3}
-    }
+    static propTypes = {${2}};
 
     render() {
       return (
-        <${0}>
+        ${0}
       );
     }
   }
@@ -47,13 +45,11 @@ options head
 
 
   class ${1:Name} extends Component {
-    static propTypes = {
-      ${4}: PropTypes.${5},
-    }
+    static propTypes = {${4}};
 
     render() {
       return (
-        <${0}>
+        ${0}
       );
     }
   }
@@ -72,13 +68,11 @@ options head
   import PropTypes from 'prop-types';
 
 
-  const ${1:Name} = ({ ${2} }) => (
-    <${0}>
+  const ${1:Name} = ({${2}}) => (
+    ${0}
   );
 
-  $1.propTypes = {
-    $2: PropTypes.${4},
-  };
+  $1.propTypes = {${3}};
 
   export default $1;
 

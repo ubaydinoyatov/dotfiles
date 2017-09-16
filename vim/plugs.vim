@@ -15,7 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
 " --- Lint ---
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 " --- Autocomplete ---
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
@@ -41,14 +41,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'elzr/vim-json', {'for': ['json', 'javascript', 'javascript.jsx']}
-Plug 'jaawerth/neomake-local-eslint-first', {'for': ['javascript', 'javascript.jsx']}
 Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 
 " --- HTML, Xml ---
-Plug 'othree/html5.vim', {'for': ['html']}
+Plug 'othree/html5.vim', {'for': ['htm', 'html']}
 Plug 'mattn/emmet-vim', {'on': 'EmmetInstall'}
-Plug 'mitsuhiko/vim-jinja', {'for': ['html', 'htm']}
-Plug 'Valloric/MatchTagAlways', {'for': ['html' , 'xhtml' , 'xml']}
+Plug 'Valloric/MatchTagAlways', {'for': ['htm', 'html' , 'xhtml' , 'xml']}
 
 " --- Styles ---
 Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
@@ -58,9 +56,9 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less', 'scss']}
 Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss']}
 
 " --- Python ---
-Plug 'klen/python-mode', {'for': 'python'}
+Plug 'vim-python/python-syntax', {'for': 'python'}
+Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
-Plug 'mitsuhiko/vim-python-combined', {'for': 'python'}
 
 " --- Go ---
 Plug 'fatih/vim-go', {'for': 'go'}
@@ -77,10 +75,9 @@ Plug 'tpope/vim-rhubarb'
 
 " --- Other ---
 Plug 'airblade/vim-rooter'
-Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-Plug 'tenfyzhong/tagbar-proto.vim'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
 Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 

@@ -2,14 +2,14 @@
 " General settings
 "=====================================================
 
+syntax on
+
 set t_Co=256
 set cursorline
 set termguicolors
 set background=dark
 colorscheme gruvbox
 let g:gruvbox_terminal_colors = 1
-
-syntax on
 
 set number
 set relativenumber
@@ -120,10 +120,17 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+" Make sure Vim returns to the same line when you reopen a file.
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" Automatically adjust quickfix window depending on how much text there is
+autocmd FileType qf call AdjustWindowHeight(3, 20)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+
 autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
 autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
 autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
@@ -133,13 +140,17 @@ let g:tagbar_sort = 0
 let g:tagbar_width = 30
 let g:tagbar_compact = 0
 
-" Lint after save
-let g:neomake_verbose = 0
-let g:neomake_list_height = 0
-let g:neomake_error_sign = {'text': '✖', 'texthl': 'GruvboxRedSign'}
-let g:neomake_warning_sign = {'text': '➤', 'texthl': 'GruvboxYellowSign'}
-
-autocmd! BufWritePost,BufEnter * Neomake
+" Async linting
+let g:ale_linters = {}
+let g:ale_linters.html = []
+let g:ale_linters.python = ['flake8']
+let g:ale_linters.javascript = ['eslint']
+let g:ale_fixers = {}
+let g:ale_fixers.python = ['isort']
+let g:ale_fixers.javascript = ['prettier']
+let g:ale_maximum_file_size = 500000  " Don't lint large files (> 500KB), it can slow things down
+" Make prettier play nicely with eslint-airbnb
+let g:ale_javascript_prettier_options = ' --single-quote --trailing-comma all'
 
 let g:indentLine_color_term = 239
 let g:indentLine_concealcursor = ''
@@ -221,11 +232,18 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+let g:user_emmet_install_global = 0
+" When in javascript, expand to 'className' (for jsx support)
+let g:user_emmet_settings = {
+  \  'javascript.jsx': {'extends': 'html', 'attribute_name': {'class': 'className'}}
+  \ }
+autocmd FileType html,htmljinja,htmldjango,xml,javascript.jsx EmmetInstall
+
 " Default file explore
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
 let g:netrw_altv = 1
+let g:netrw_banner = 0
 let g:netrw_winsize = 30
+let g:netrw_browse_split = 4
 
 autocmd TermOpen * call HandleTerm()
 

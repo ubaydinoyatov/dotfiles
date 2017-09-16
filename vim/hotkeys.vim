@@ -4,9 +4,6 @@
 
 let mapleader = '\'
 
-" C-a to select all buffer
-nnoremap <C-a> ggVG
-
 " Duplicate lines
 nnoremap <Leader>d m`YP``
 vnoremap <Leader>d YPgv
@@ -28,10 +25,6 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
-" Replace
-nnoremap <leader>s :%s//<left>
-vnoremap <leader>s :s//<left><Paste>
-
 " Moving between splits
 noremap <leader>w <C-w>w
 
@@ -42,18 +35,15 @@ cnoremap <C-l> <Right>
 
 inoremap <C-l> <Right>
 
-" Set text wrapping toggles
-nnoremap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
-
 " Toggle paste mode
 nnoremap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
-nnoremap <C-e> :Buffers<CR>
 nnoremap <Leader>bd :bd <CR>
 nnoremap <Leader>bh :Startify <CR>
 
 " Files
 nnoremap <C-o> :Files<CR>
+nnoremap <C-e> :Buffers<CR>
 nnoremap <C-t> :TagbarToggle<CR>
 nnoremap <C-p> :NERDTreeToggle<CR>
 nnoremap <Leader>fo :NERDTreeFind<CR>
@@ -69,16 +59,15 @@ nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 nnoremap <Leader>gk :Agit <CR>
 nnoremap <Leader>gd :Gdiff <CR>
 nnoremap <Leader>gf :GFiles <CR>
+nnoremap <Leader>gb :Gblame <CR>
 nnoremap <Leader>gs :Gstatus <CR>
-nnoremap <Leader>gb :AgitFile <CR>
+nnoremap <Leader>gc :Gcommit <CR>
 nnoremap <Leader>gl :Commits <CR>
 nnoremap <Leader>go :Gbrowse <CR>
 
 nnoremap <Leader>hf :History <CR>
 nnoremap <Leader>hc :History: <CR>
 nnoremap <Leader>hs :History/ <CR>
-
-nnoremap <C-l> :Lines<CR>
 
 " Terminal
 nnoremap <Leader>ts :bo sp term://zsh\|resize 20<Cr>i
@@ -107,6 +96,10 @@ map z#  <Plug>(asterisk-z#)
 map gz* <Plug>(asterisk-gz*)
 map gz# <Plug>(asterisk-gz#)
 
+nmap <silent> [s <Plug>(ale_previous_wrap)
+nmap <silent> ]s <Plug>(ale_next_wrap)
+nmap <leader>= <Plug>(ale_fix)
+
 " <Tab>
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -122,12 +115,14 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
   \ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 
 " Cursor position after expanding tag
-autocmd FileType html,xhtml,xml,javascript.jsx inoremap <expr> <CR> TagExpander()
+autocmd FileType html,htmldjango,htmljinja,xml,javascript.jsx
+  \ inoremap <expr> <CR> TagExpander()
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-autocmd FileType help,diff,git,gina-log,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
+autocmd FileType help,diff,git,gina-log,man,hackernews
+  \ nnoremap <buffer><silent> q :bd!<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
