@@ -26,3 +26,4 @@ indent_size = 4
 
 [*.go]
 indent_size = 4
+trim_trailing_whitespace = false

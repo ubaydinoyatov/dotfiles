@@ -17,15 +17,14 @@ cat <<WhatWillHappen
     - clone dotfiles into '$HOME/.dotfiles'
     - install vim-plug
     - move your existing vimrc
-         from: '$VIMRC'
-   to:   '$VIMRC.bak'
+        from: '$VIMRC'
+        to: '$BACKDIR/'
     - symlink
-         from: '$VIMRC'
-   to:   '$HOME/.dotfiles/vimrc'
+        from: '$VIMRC'
+    and: '$HOME/.dotfiles/vimrc'
     - install all plugins listed in
-         '$HOME/.dotfiles/vim/vimrc.plugs'
-   to:
-    - symlink gitconfig, zshrc, tmux.conf...
+        '$HOME/.dotfiles/vim/vimrc.plugs'
+    - symlink gitconfig, zshrc, tmux.conf... to ~/...
   If you're not comfortable with these plans,
   you can abort now by pressing <C-c>.
 WhatWillHappen
@@ -39,18 +38,21 @@ echo -n "Installing dotfiles... "
 git clone --quiet https://github.com/ubaydinoyatov/dotfiles.git $HOME/.dotfiles
 echo "done."
 
-if [[ ! -d $BACKDIR ]]; then
-  mkdir $BACKDIR
+if ! (which fzf > /dev/null); then
+  echo -n "Installing fzf... "
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 fi
+
+if [[ -d $BACKDIR ]]; then
+  rm -rf $BACKDIR
+fi
+mkdir $BACKDIR
 
 Files=(vimrc zshrc tmux.conf gitconfig editorconfig fzf.zsh)
 
 for f in "${Files[@]}"; do
   if [[ -f $HOME/.$f ]]; then
-    if [[ -f $BACKDIR/$f ]]; then
-      rm $BACKDIR/$f
-    fi
-
     echo -n "Backing up existing $f... "
     mv $HOME/.$f $BACKDIR/$f
     echo "done"

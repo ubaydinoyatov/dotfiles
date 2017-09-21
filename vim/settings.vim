@@ -3,13 +3,14 @@
 "=====================================================
 
 syntax on
-
 set t_Co=256
 set cursorline
 set termguicolors
 set background=dark
 colorscheme gruvbox
 let g:gruvbox_terminal_colors = 1
+set t_AB=^[[48;5;%dm
+set t_AF=^[[38;5;%dm
 
 set number
 set relativenumber
@@ -233,11 +234,14 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 let g:user_emmet_install_global = 0
-" When in javascript, expand to 'className' (for jsx support)
 let g:user_emmet_settings = {
-  \  'javascript.jsx': {'extends': 'html', 'attribute_name': {'class': 'className'}}
+  \  'javascript.jsx': {'extends': 'html', 'attribute_name': {
+    \  'for': 'htmlFor',
+    \  'class': 'className'
+    \ }}
   \ }
 autocmd FileType html,htmljinja,htmldjango,xml,javascript.jsx EmmetInstall
+autocmd FileType go setlocal nolist
 
 " Default file explore
 let g:netrw_altv = 1

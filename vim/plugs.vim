@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " --- Lint ---
 Plug 'w0rp/ale'
