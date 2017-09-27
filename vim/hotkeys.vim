@@ -39,14 +39,16 @@ noremap <leader>w <C-w>w
 
 " Navigation in command line
 cnoremap <C-a> <Home>
-cnoremap <C-h> <Left>
+cnoremap <C-b> <Left>
 cnoremap <C-l> <Right>
 
+inoremap <C-b> <Left>
 inoremap <C-l> <Right>
 
 " Toggle paste mode
 nnoremap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
+nnoremap <C-l> :BLines <CR>
 nnoremap <Leader>bd :bd <CR>
 nnoremap <Leader>bh :Startify <CR>
 
@@ -155,7 +157,7 @@ autocmd FileType html,htmldjango,htmljinja,xml,javascript.jsx
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-autocmd FileType help,diff,git,gina-log,man,hackernews
+autocmd FileType help,diff,git,gina-log,godoc,man,hackernews
   \ nnoremap <buffer><silent> q :bd!<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>

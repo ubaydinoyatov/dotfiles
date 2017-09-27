@@ -35,7 +35,7 @@ Plug 'haya14busa/vim-asterisk'
 " --- Files ---
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 
 " --- Javascript ---

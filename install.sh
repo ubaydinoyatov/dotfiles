@@ -38,18 +38,12 @@ echo -n "Installing dotfiles... "
 git clone --quiet https://github.com/ubaydinoyatov/dotfiles.git $HOME/.dotfiles
 echo "done."
 
-if ! (which fzf > /dev/null); then
-  echo -n "Installing fzf... "
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
-fi
-
 if [[ -d $BACKDIR ]]; then
   rm -rf $BACKDIR
 fi
 mkdir $BACKDIR
 
-Files=(vimrc zshrc tmux.conf gitconfig editorconfig fzf.zsh)
+Files=(vimrc zshrc tmux.conf gitconfig editorconfig)
 
 for f in "${Files[@]}"; do
   if [[ -f $HOME/.$f ]]; then

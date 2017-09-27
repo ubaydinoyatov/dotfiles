@@ -27,6 +27,8 @@ set fillchars+=vert:│
 " hide cmd
 set noshowcmd
 
+set nowrap
+
 " indent
 set cindent
 set autoindent
@@ -242,6 +244,8 @@ let g:user_emmet_settings = {
   \ }
 autocmd FileType html,htmljinja,htmldjango,xml,javascript.jsx EmmetInstall
 autocmd FileType go setlocal nolist
+
+let g:go_decls_mode = 'fzf'
 
 " Default file explore
 let g:netrw_altv = 1
