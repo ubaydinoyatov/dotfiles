@@ -50,6 +50,9 @@ endif
 " Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" Insert current file directory path (without file name)
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " Navigation in command line
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
