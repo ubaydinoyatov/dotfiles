@@ -5,7 +5,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
-Plug 'Yggdroot/indentLine'
 
 " --- Edit ---
 Plug 'terryma/vim-expand-region'
@@ -41,8 +40,8 @@ Plug 'junegunn/fzf.vim'
 " --- Javascript ---
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
-Plug 'elzr/vim-json', {'for': ['json', 'javascript', 'javascript.jsx']}
 Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
+Plug 'elzr/vim-json', {'for': 'json'}
 
 " --- HTML, Xml ---
 Plug 'othree/html5.vim', {'for': ['htm', 'html']}
@@ -80,6 +79,5 @@ Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
-Plug 'KabbAmine/vCoolor.vim', {'on': ['VCoolor', 'VCase']}
 
 call plug#end()

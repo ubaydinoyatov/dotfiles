@@ -37,6 +37,9 @@ endif
 " Moving between splits
 noremap <leader>w <C-w>w
 
+" Insert current file directory path (without file name)
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " Navigation in command line
 cnoremap <C-a> <Home>
 cnoremap <C-b> <Left>
@@ -48,17 +51,18 @@ inoremap <C-l> <Right>
 " Toggle paste mode
 nnoremap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
-nnoremap <C-l> :BLines <CR>
-nnoremap <Leader>bd :bd <CR>
-nnoremap <Leader>bh :Startify <CR>
+nnoremap <silent> <C-l> :BLines <CR>
+nnoremap <silent> <Leader>bd :bd <CR>
+nnoremap <silent> <Leader>bh :Startify <CR>
 
-" Files
-nnoremap <C-o> :Files<CR>
-nnoremap <C-e> :Buffers<CR>
-nnoremap <C-t> :TagbarToggle<CR>
-nnoremap <C-p> :NERDTreeToggle<CR>
-nnoremap <Leader>fo :NERDTreeFind<CR>
-nnoremap <Leader>fg :Ag<CR>
+nnoremap <silent> <C-o> :Files<CR>
+nnoremap <silent> <C-e> :Buffers<CR>
+nnoremap <silent> <Leader>fg :Ag<CR>
+xnoremap <silent> <Leader>fg y:Ag <C-R>"<CR>
+
+nnoremap <silent> <C-p> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>fo :NERDTreeFind<CR>
+nnoremap <silent> <Leader>tt :TagbarToggle<CR>
 
 " Window
 nnoremap <silent> <Leader>+ :resize +5<CR>
@@ -67,22 +71,22 @@ nnoremap <silent> <Leader>v+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 
 " Git
-nnoremap <Leader>gk :Agit <CR>
-nnoremap <Leader>gd :Gdiff <CR>
-nnoremap <Leader>gf :GFiles <CR>
-nnoremap <Leader>gb :Gblame <CR>
-nnoremap <Leader>gs :Gstatus <CR>
-nnoremap <Leader>gc :Gcommit <CR>
-nnoremap <Leader>gl :Commits <CR>
-nnoremap <Leader>go :Gbrowse <CR>
+nnoremap <silent> <Leader>gk :Agit <CR>
+nnoremap <silent> <Leader>gd :Gdiff <CR>
+nnoremap <silent> <Leader>gf :GFiles <CR>
+nnoremap <silent> <Leader>gb :Gblame <CR>
+nnoremap <silent> <Leader>gs :Gstatus <CR>
+nnoremap <silent> <Leader>gc :Gcommit <CR>
+nnoremap <silent> <Leader>gl :Commits <CR>
+nnoremap <silent> <Leader>go :Gbrowse <CR>
 
-nnoremap <Leader>hf :History <CR>
-nnoremap <Leader>hc :History: <CR>
-nnoremap <Leader>hs :History/ <CR>
+nnoremap <silent> <Leader>hf :History <CR>
+nnoremap <silent> <Leader>hc :History: <CR>
+nnoremap <silent> <Leader>hs :History/ <CR>
 
 " Terminal
-nnoremap <Leader>ts :bo sp term://zsh\|resize 20<Cr>i
-nnoremap <Leader>tv :bo vsp term://zsh<Cr>i
+nnoremap <silent> <Leader>ts :bo sp term://zsh\|resize 20<Cr>i
+nnoremap <silent> <Leader>tv :bo vsp term://zsh<Cr>i
 
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-w>h <C-\><C-n><C-w>h
@@ -157,8 +161,7 @@ autocmd FileType html,htmldjango,htmljinja,xml,javascript.jsx
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-autocmd FileType help,diff,git,gina-log,godoc,man,hackernews
-  \ nnoremap <buffer><silent> q :bd!<CR>
+autocmd FileType help,diff,git,godoc,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>

@@ -16,13 +16,23 @@ source /usr/local/bin/virtualenvwrapper.sh
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
-export ANDROID_HOME=/opt/Android/Sdk
+case "$(uname -s)" in
+  Darwin)
+    export ANDROID_HOME=${HOME}/Library/Android/sdk
+    ;;
+
+  Linux)
+    export ANDROID_HOME=/opt/Android/Sdk
+    ;;
+esac
+
 if [[ -d $ANDROID_HOME/lib ]]; then
   export ANDROID_SDK=$ANDROID_HOME/lib
+  export PATH=${PATH}:${ANDROID_HOME}/emulator
+  export PATH=${PATH}:${ANDROID_HOME}/tools
+  export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 fi
-export PATH=${PATH}:${ANDROID_HOME}/emulator
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -37,7 +47,7 @@ alias df='cd ~/.dotfiles'
 alias tmux="tmux attach || tmux new"
 
 # Setting ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --skip-vcs-ignores -p ~/.dotfiles/agignore -g ""'
 
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -65,7 +75,7 @@ function server() {
 }
 
 # extracts the given file
-x () {
+function x () {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2)   tar xjf $1     ;;
@@ -85,5 +95,8 @@ x () {
       echo "'$1' is not a valid file"
   fi
  }
+
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

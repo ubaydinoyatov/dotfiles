@@ -1,3 +1,4 @@
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
@@ -10,6 +11,7 @@ let g:fzf_colors =
   \ 'hl':      ['fg', 'Statement'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
   \ 'prompt':  ['fg', 'Conditional'],
   \ 'pointer': ['fg', 'Conditional'],
   \ 'marker':  ['fg', 'Conditional'],

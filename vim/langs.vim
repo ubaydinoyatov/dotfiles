@@ -32,6 +32,7 @@ let g:python_highlight_string_formatting = 1
 
 " --- Go ---
 let g:go_list_type = "quickfix"
+let g:go_decls_mode = 'fzf'
 let g:go_fmt_command = 'goimports'
 let g:go_addtags_transform = "camelcase"
 let g:go_term_enabled = 1
@@ -40,8 +41,10 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_build_constraints = 1
+autocmd FileType go setlocal nolist
 
 " --- Other ---
 let g:vim_json_syntax_conceal = 0
 autocmd FileType htmljinja,htmldjango setlocal commentstring={#\ %s\ #}
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+autocmd BufRead,BufNewFile *.wsdl setlocal filetype=xsd
