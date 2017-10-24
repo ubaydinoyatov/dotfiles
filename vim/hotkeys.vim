@@ -60,8 +60,7 @@ nnoremap <silent> <C-e> :Buffers<CR>
 nnoremap <silent> <Leader>fg :Ag<CR>
 xnoremap <silent> <Leader>fg y:Ag <C-R>"<CR>
 
-nnoremap <silent> <C-p> :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>fo :NERDTreeFind<CR>
+nnoremap <silent> <C-p> :call NerdToggle()<CR>
 nnoremap <silent> <Leader>tt :TagbarToggle<CR>
 
 " Window
@@ -168,6 +167,18 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+
+function! NerdToggle()
+  if bufname('%') == '' || &readonly || !filereadable(bufname('$'))
+    exe "NERDTreeToggle"
+  else
+    if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+      exe "NERDTreeClose"
+    else
+      exe "NERDTreeFind"
+    endif
+  endif
 endfunction
 
 function! TagExpander()
