@@ -4,6 +4,10 @@
 
 let mapleader = '\'
 
+" I always hit ":W" instead of ":w" because I linger on the shift key...
+command! Q q
+command! W w
+
 " Duplicate lines
 nnoremap <Leader>d m`YP``
 vnoremap <Leader>d YPgv
