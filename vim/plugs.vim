@@ -7,11 +7,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 
 " --- Edit ---
-Plug 'terryma/vim-expand-region'
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-expand-region'
 Plug 'AndrewRadev/splitjoin.vim'
 
 " --- Lint ---

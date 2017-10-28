@@ -64,7 +64,7 @@ set laststatus=2
 set wildignorecase
 set hidden
 set ttimeout
-set lazyredraw
+set nolazyredraw
 set inccommand=nosplit
 
 " menuone: show the pupmenu when only one match
@@ -206,21 +206,6 @@ let g:startify_list_order = [
   \ ]
 autocmd FileType startify setlocal scrolloff=0 nowrap
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-
 " NERDTree
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 let NERDTreeMinimalUI=1
@@ -240,6 +225,13 @@ let g:user_emmet_settings = {
     \  'class': 'className'
     \ }}
   \ }
+
+" GitGutter styling to use · instead of +/-
+let g:gitgutter_sign_added = '∙'
+let g:gitgutter_sign_modified = '∙'
+let g:gitgutter_sign_removed = '∙'
+let g:gitgutter_sign_modified_removed = '∙'
+
 autocmd FileType html,htmljinja,htmldjango,xml,javascript.jsx EmmetInstall
 
 " Default file explore
