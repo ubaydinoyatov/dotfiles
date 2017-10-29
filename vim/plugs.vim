@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
+Plug 't9md/vim-choosewin'
 
 " --- Edit ---
 Plug 'tpope/vim-repeat'

@@ -71,10 +71,6 @@ set inccommand=nosplit
 " disable preview scratch window,
 set completeopt=menu,menuone,longest
 
-" Show a vertical line on a 80th character
-set textwidth=80
-set colorcolumn=+1
-
 " Mark tabs and trailing spaces
 set list listchars=nbsp:·,tab:→\ ,trail:·,extends:>,precedes:<
 set listchars=tab:>·,trail:·,nbsp:¬
@@ -138,8 +134,7 @@ autocmd BufEnter * call CleanEmptyBuffers()
 
 set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
-autocmd FileType hackernews setlocal nonumber norelativenumber colorcolumn=0
-autocmd FileType agit,agit_diff,agit_stat,git,gitcommit setlocal colorcolumn=0
+autocmd FileType hackernews setlocal nonumber norelativenumber
 
 let g:tagbar_sort = 0
 let g:tagbar_width = 30
@@ -152,7 +147,7 @@ let g:ale_linters.python = ['flake8']
 let g:ale_linters.javascript = ['eslint']
 let g:ale_fixers = {}
 let g:ale_fixers.python = ['isort']
-let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.javascript = ['prettier', 'eslint']
 let g:ale_maximum_file_size = 500000  " Don't lint large files (> 500KB), it can slow things down
 " Make prettier play nicely with eslint-airbnb
 let g:ale_javascript_prettier_options = ' --single-quote --trailing-comma all'
@@ -240,7 +235,7 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 30
 let g:netrw_browse_split = 4
 
-autocmd TermOpen * setlocal nonumber norelativenumber colorcolumn=0
+autocmd TermOpen * setlocal nonumber norelativenumber
 
 function! CleanEmptyBuffers()
   let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0 && !getbufvar(v:val, "&mod")')

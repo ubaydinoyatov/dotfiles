@@ -48,3 +48,6 @@ let g:vim_json_syntax_conceal = 0
 autocmd FileType htmljinja,htmldjango setlocal commentstring={#\ %s\ #}
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 autocmd BufRead,BufNewFile *.wsdl setlocal filetype=xsd
+
+" Show a vertical line on a 80th character
+autocmd FileType python,go,sh,javascript,javascript.jsx setlocal textwidth=80 colorcolumn=+1

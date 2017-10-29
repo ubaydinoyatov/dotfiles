@@ -4,10 +4,6 @@
 
 let mapleader = '\'
 
-" I always hit ":W" instead of ":w" because I linger on the shift key...
-command! Q q
-command! W w
-
 " Duplicate lines
 nnoremap <Leader>d m`YP``
 vnoremap <Leader>d YPgv
@@ -37,9 +33,6 @@ else
   vnoremap <A-j> :m '>+1<CR>gv=gv
   vnoremap <A-k> :m '<-2<CR>gv=gv
 endif
-
-" Moving between splits
-noremap <leader>w <C-w>w
 
 " Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -164,10 +157,24 @@ autocmd FileType html,htmldjango,htmljinja,xml,javascript.jsx
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+nmap - <Plug>(choosewin)
+
 autocmd FileType help,diff,git,godoc,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
+
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
