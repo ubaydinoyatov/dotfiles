@@ -5,7 +5,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
-Plug 't9md/vim-choosewin'
 
 " --- Edit ---
 Plug 'tpope/vim-repeat'
@@ -41,6 +40,7 @@ Plug 'junegunn/fzf.vim'
 " --- Javascript ---
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
+Plug 'styled-components/vim-styled-components', {'for': 'javascript.jsx'}
 Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 Plug 'elzr/vim-json', {'for': 'json'}
 
@@ -54,7 +54,6 @@ Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less', 'scss']}
-Plug 'ap/vim-css-color', {'for': ['css', 'less', 'scss']}
 
 " --- Python ---
 Plug 'vim-python/python-syntax', {'for': 'python'}
@@ -75,6 +74,7 @@ Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'tpope/vim-rhubarb'
 
 " --- Other ---
+Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-rooter'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'

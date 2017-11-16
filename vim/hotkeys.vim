@@ -17,6 +17,16 @@ cnoremap <silent><C-s> <C-u>write<CR>
 xnoremap < <gv
 xnoremap > >gv|
 
+" Navigate splits with <Ctrl-hjkl>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" j and k by lines on screen, as with modern editors
+nnoremap j gj
+nnoremap k gk
+
 " Move up / down with Alt + j / k
 if has('mac')
   nnoremap ∆ :m .+1<CR>==
@@ -48,7 +58,6 @@ inoremap <C-l> <Right>
 " Toggle paste mode
 nnoremap <silent> <leader>tp :set invpaste<CR>:set paste?<CR>
 
-nnoremap <silent> <C-l> :BLines <CR>
 nnoremap <silent> <Leader>bd :bd <CR>
 nnoremap <silent> <Leader>bh :Startify <CR>
 
@@ -73,7 +82,6 @@ nnoremap <silent> <Leader>gf :GFiles <CR>
 nnoremap <silent> <Leader>gb :Gblame <CR>
 nnoremap <silent> <Leader>gs :Gstatus <CR>
 nnoremap <silent> <Leader>gc :Gcommit <CR>
-nnoremap <silent> <Leader>gl :Commits <CR>
 nnoremap <silent> <Leader>go :.Gbrowse <CR>
 
 nnoremap <silent> <Leader>hf :History <CR>
@@ -156,8 +164,6 @@ autocmd FileType html,htmldjango,htmljinja,xml,javascript.jsx
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
-
-nmap - <Plug>(choosewin)
 
 autocmd FileType help,diff,git,godoc,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
 

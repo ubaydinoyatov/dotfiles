@@ -182,26 +182,10 @@ options head
 snippet ref
 abbr ref
 options head
-  ref={${1:ref} => { this.${2:name} = $1; }}
+  ref={(c) => { this.${2:name} = c; }}
 
 # Redux Constants
 snippet rcs
 abbr Redux Action Constant
 options head
   export const ${1} = '${0}$1';
-
-# export function
-snippet efunc
-abbr export function
-options head
-  export function ${1:function_name}(${2:argument}) {
-    ${0:TARGET}
-  }
-
-# export generator
-snippet egen
-abbr export function generator
-options head
-  export function* ${1:function_name}(${2:argument}) {
-    ${0:TARGET}
-  }

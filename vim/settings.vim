@@ -57,15 +57,19 @@ set complete=.,w,b,u,t
 
 " limit completion menu height
 set pumheight=15
-set scrolloff=5
 set incsearch
 set hlsearch
 set laststatus=2
 set wildignorecase
 set hidden
 set ttimeout
-set nolazyredraw
+set lazyredraw
 set inccommand=nosplit
+
+" scrolling
+set scrolloff=4
+set sidescrolloff=8
+set sidescroll=1
 
 " menuone: show the pupmenu when only one match
 " disable preview scratch window,
@@ -202,7 +206,7 @@ let g:startify_list_order = [
 autocmd FileType startify setlocal scrolloff=0 nowrap
 
 " NERDTree
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$', '__pycache__$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeWinSize = 30
