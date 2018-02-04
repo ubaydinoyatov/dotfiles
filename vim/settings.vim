@@ -232,6 +232,7 @@ let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
 autocmd FileType html,htmljinja,htmldjango,xml,javascript.jsx EmmetInstall
+autocmd FileType css,less,scss setlocal iskeyword+=-
 
 " Default file explore
 let g:netrw_altv = 1

@@ -74,7 +74,6 @@ Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'tpope/vim-rhubarb'
 
 " --- Other ---
-Plug 'jparise/vim-graphql'
 Plug 'airblade/vim-rooter'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'

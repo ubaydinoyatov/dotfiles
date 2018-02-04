@@ -13,6 +13,9 @@ nnoremap <silent><C-s> :<C-u>write<CR>
 vnoremap <silent><C-s> :<C-u>write<CR>
 cnoremap <silent><C-s> <C-u>write<CR>
 
+" copy to system buffer
+xnoremap <Leader>y "*y
+
 " Move right / left
 xnoremap < <gv
 xnoremap > >gv|
@@ -170,7 +173,7 @@ autocmd FileType help,diff,git,godoc,man,hackernews nnoremap <buffer><silent> q 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
-"" no one is really happy until you have this shortcuts
+" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -181,6 +184,9 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+
+" disable command history
+map q: :
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
