@@ -41,7 +41,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'styled-components/vim-styled-components', {'for': 'javascript.jsx'}
-Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 Plug 'elzr/vim-json', {'for': 'json'}
 
 " --- HTML, Xml ---
@@ -69,9 +68,9 @@ Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
 " --- Git ---
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
-Plug 'tpope/vim-rhubarb'
 
 " --- Other ---
 Plug 'airblade/vim-rooter'

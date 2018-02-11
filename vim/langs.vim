@@ -5,11 +5,6 @@
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#sources#ternjs#filetypes = [
-  \ 'jsx',
-  \ 'javascript',
-  \ 'javascript.jsx',
-  \ ]
 
 "" Deoplete-tern settings
 let g:tern_request_timeout = 1
