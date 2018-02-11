@@ -206,7 +206,7 @@ let g:startify_list_order = [
 autocmd FileType startify setlocal scrolloff=0 nowrap
 
 " NERDTree
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$', '__pycache__$']
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', '\.log$', '\.o$', '__pycache__$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 let NERDTreeWinSize = 30

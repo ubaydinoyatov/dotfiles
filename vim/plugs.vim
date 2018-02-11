@@ -41,7 +41,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'styled-components/vim-styled-components', {'for': 'javascript.jsx'}
-Plug 'carlitux/deoplete-ternjs', {'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
 Plug 'elzr/vim-json', {'for': 'json'}
 
 " --- HTML, Xml ---
