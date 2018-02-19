@@ -3,6 +3,7 @@ bower_components/
 build/
 dist/
 public/
+public_nginx/
 node_modules/
 tmp/
 vendor/

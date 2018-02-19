@@ -77,6 +77,5 @@ Plug 'airblade/vim-rooter'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-Plug 'ryanss/vim-hackernews', {'on': 'HackerNews'}
 
 call plug#end()

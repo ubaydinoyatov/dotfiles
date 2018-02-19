@@ -168,7 +168,7 @@ autocmd FileType html,htmldjango,htmljinja,xml,javascript.jsx
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
-autocmd FileType help,diff,git,godoc,man,hackernews nnoremap <buffer><silent> q :bd!<CR>
+autocmd FileType help,diff,git,godoc,man nnoremap <buffer><silent> q :bd!<CR>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>

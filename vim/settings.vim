@@ -138,7 +138,6 @@ autocmd BufEnter * call CleanEmptyBuffers()
 
 set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
-autocmd FileType hackernews setlocal nonumber norelativenumber
 
 let g:tagbar_sort = 0
 let g:tagbar_width = 30
