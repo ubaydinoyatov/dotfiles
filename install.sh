@@ -35,7 +35,7 @@ curl -sfLo $AUTOLOAD/plug.vim --create-dirs \
 echo "done."
 
 echo -n "Installing dotfiles... "
-git clone --quiet https://github.com/ubaydinoyatov/dotfiles.git $HOME/.dotfiles
+git clone --quiet https://github.com/rahmonzoda/dotfiles.git $HOME/.dotfiles
 echo "done."
 
 if [[ -d $BACKDIR ]]; then

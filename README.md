@@ -5,5 +5,5 @@ First, install [`neovim`](https://neovim.io/) with [Python3 support](https://git
 After
 
 ```
-curl -o- https://raw.githubusercontent.com/ubaydinoyatov/dotfiles/master/install.sh | bash
+curl -o- https://raw.githubusercontent.com/rahmonzoda/dotfiles/master/install.sh | bash
 ```

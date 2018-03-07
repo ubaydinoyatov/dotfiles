@@ -76,6 +76,7 @@ Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 Plug 'airblade/vim-rooter'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'dansomething/vim-hackernews'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 
 call plug#end()
