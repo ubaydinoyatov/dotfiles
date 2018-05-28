@@ -1,7 +1,7 @@
 export ZSH=${HOME}/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
-plugins=(git gitfast osx )
+plugins=(git gitfast osx yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,7 +37,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
-export TERM=xterm-256color
 if (which nvim > /dev/null); then
   alias v='nvim'
   alias vim='nvim'
@@ -45,6 +44,7 @@ if (which nvim > /dev/null); then
 fi
 alias rm="rm -rf"
 alias df='cd ~/.dotfiles'
+alias py='python3 '
 alias tmux="tmux attach || tmux new"
 
 # Setting ag as the default source for fzf
@@ -103,4 +103,3 @@ function x () {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
