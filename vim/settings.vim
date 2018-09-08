@@ -71,6 +71,9 @@ set scrolloff=4
 set sidescrolloff=8
 set sidescroll=1
 
+" updatetime, default 4000
+set updatetime=100
+
 " menuone: show the pupmenu when only one match
 " disable preview scratch window,
 set completeopt=menu,menuone,longest

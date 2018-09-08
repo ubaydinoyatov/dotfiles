@@ -30,6 +30,7 @@ Plug 'jiangmiao/auto-pairs'
 " --- search ---
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
+Plug 'junegunn/vim-slash'
 
 " --- Files ---
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
@@ -63,9 +64,6 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'zchee/deoplete-go', {'for': 'go', 'do': 'make'}
 
-" --- Markdown ---
-Plug 'tpope/vim-markdown', {'for': 'markdown'}
-
 " --- Git ---
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -78,5 +76,6 @@ Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'dansomething/vim-hackernews'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 call plug#end()
