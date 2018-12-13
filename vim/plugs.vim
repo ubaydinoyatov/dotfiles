@@ -28,9 +28,8 @@ Plug 'Shougo/neopairs.vim'
 Plug 'jiangmiao/auto-pairs'
 
 " --- search ---
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/vim-asterisk'
 Plug 'junegunn/vim-slash'
+Plug 'rizzatti/dash.vim'
 
 " --- Files ---
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
@@ -41,8 +40,10 @@ Plug 'junegunn/fzf.vim'
 " --- Javascript ---
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
-Plug 'styled-components/vim-styled-components', {'for': 'javascript.jsx'}
+Plug 'wokalski/autocomplete-flow', {'for': ['javascript', 'javascript.jsx']}
+Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'javascript.jsx']}
 Plug 'elzr/vim-json', {'for': 'json'}
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 
 " --- HTML, Xml ---
 Plug 'othree/html5.vim', {'for': ['htm', 'html']}
@@ -51,9 +52,10 @@ Plug 'Valloric/MatchTagAlways', {'for': ['htm', 'html' , 'xhtml' , 'xml']}
 
 " --- Styles ---
 Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
-Plug 'groenewege/vim-less', {'for': ['less']}
-Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less', 'scss']}
+Plug 'groenewege/vim-less', {'for': 'less'}
+Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
+Plug 'wavded/vim-stylus', {'for ': 'styl'}
 
 " --- Python ---
 Plug 'vim-python/python-syntax', {'for': 'python'}
@@ -68,14 +70,11 @@ Plug 'zchee/deoplete-go', {'for': 'go', 'do': 'make'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
-Plug 'cohama/agit.vim', {'on': ['Agit','AgitFile']}
 
 " --- Other ---
 Plug 'airblade/vim-rooter'
 Plug 'benizi/vim-automkdir'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'dansomething/vim-hackernews'
-Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 call plug#end()

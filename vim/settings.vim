@@ -15,7 +15,6 @@ set t_AF=^[[38;5;%dm
 set number
 set relativenumber
 set backspace=indent,eol,start
-set tags=./tags,tags;$HOME
 
 set nobackup
 set noswapfile
@@ -142,10 +141,6 @@ autocmd BufEnter * call CleanEmptyBuffers()
 set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 
-let g:tagbar_sort = 0
-let g:tagbar_width = 30
-let g:tagbar_compact = 0
-
 " Async linting
 let g:ale_linters = {}
 let g:ale_linters.html = []
@@ -153,15 +148,15 @@ let g:ale_linters.python = ['flake8']
 let g:ale_linters.javascript = ['eslint']
 let g:ale_fixers = {}
 let g:ale_fixers.python = ['isort']
-let g:ale_fixers.javascript = ['prettier', 'eslint']
-let g:ale_maximum_file_size = 500000  " Don't lint large files (> 500KB), it can slow things down
+let g:ale_fixers.javascript = ['prettier-eslint', 'eslint']
+let g:ale_maximum_file_size = 50000  " Don't lint large files (> 500KB), it can slow things down
 " Make prettier play nicely with eslint-airbnb
 let g:ale_javascript_prettier_options = ' --single-quote --trailing-comma all'
 
 let g:rooter_silent_chdir = 1
 
-let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
+let g:neosnippet#enable_completed_snippet = 1
 
 " Start Banner
 let g:startify_files_number = 6

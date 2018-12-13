@@ -3,8 +3,10 @@
 "=====================================================
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#file#enable_buffer_path = 1
+call deoplete#custom#option('sources', {
+  \ 'javascript': ['flow', 'neosnippet', 'buffer', 'file'],
+  \ 'javascript.jsx': ['flow', 'neosnippet', 'buffer', 'file'],
+  \})
 
 "" Deoplete-tern settings
 let g:tern_request_timeout = 1
@@ -13,7 +15,7 @@ let g:tern_show_signature_in_pum = 1
 " To close preview window of deoplete automagically
 autocmd CompleteDone * pclose
 
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 let g:javascript_plugin_flow = 1
 let g:javascript_plugin_jsdoc = 1
 
@@ -43,6 +45,7 @@ let g:vim_json_syntax_conceal = 0
 autocmd FileType htmljinja,htmldjango setlocal commentstring={#\ %s\ #}
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint,babel}rc set filetype=json
 autocmd BufRead,BufNewFile *.wsdl setlocal filetype=xsd
+" autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
 
 " Show a vertical line on a 80th character
 autocmd FileType python,go,sh,javascript,javascript.jsx setlocal textwidth=80 colorcolumn=+1

@@ -1,0 +1,106 @@
+# React class
+snippet rcl
+abbr React Class
+options head
+  /*
+  * $1
+  */
+  import React, {
+    Component,
+  } from 'react';
+
+  class ${1:MyComponent} extends Component {
+    render() {
+      return (
+        ${2}
+      );
+    }
+  }
+
+  export default $1;
+
+# Default props for Presentational component
+snippet eco
+abbr export
+options head
+  import ${1} from '.${0}/$1';
+
+  export default $1;
+
+# Default props for Presentational component
+snippet rdp
+abbr defaultProps
+options head
+  ${1}.defaultProps = {
+    ${2}: ${0},
+  };
+
+# Lifecycle Methods
+snippet rcdm
+abbr componentDidMount
+options head
+  componentDidMount() {
+    ${0}
+  }
+
+snippet rcwm
+abbr componentWillMount
+options head
+  componentWillMount() {
+    ${0}
+  }
+
+snippet rcsu
+abbr shouldComponentUpdate
+options head
+  shouldComponentUpdate() {
+    ${0}
+  }
+
+snippet rcwu
+abbr componentWillUpdate
+options head
+  componentWillUpdate() {
+    ${0}
+  }
+
+snippet rcdu
+abbr componentDidUpdate
+options head
+  componentDidUpdate() {
+    ${0}
+  }
+
+snippet rcrp
+abbr componentWillReceiveProps
+options head
+  componentWillReceiveProps(newProps${1}) {
+    ${0}
+  }
+
+snippet rcu
+abbr componentWillUnmount
+options head
+  componentWillUnmount() {
+    ${0}
+  }
+
+# State
+snippet rss
+abbr set State
+options head
+  this.setState({
+    ${1}: ${0},
+  });
+
+# ref
+snippet ref
+abbr ref
+options head
+  ref={(c) => { this.${2:name} = c; }}
+
+# Redux Constants
+snippet rco
+abbr Redux Action Constant
+options head
+  export const ${1} = '${0}$1';

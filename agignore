@@ -1,7 +1,10 @@
 .git/
 bower_components/
 build/
+release/
 dist/
+lib/
+es/
 public/
 public_nginx/
 node_modules/
@@ -42,8 +45,4 @@ zsh_history
 COPYING*
 LICENSE*
 
-TAGS
 GPATH
-GRTAGS
-GTAGS
-tags.log

@@ -30,23 +30,6 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap j gj
 nnoremap k gk
 
-" Move up / down with Alt + j / k
-if has('mac')
-  nnoremap ∆ :m .+1<CR>==
-  nnoremap ˚ :m .-2<CR>==
-  inoremap ∆ <Esc>:m .+1<CR>==gi
-  inoremap ˚ <Esc>:m .-2<CR>==gi
-  vnoremap ∆ :m '>+1<CR>gv=gv
-  vnoremap ˚ :m '<-2<CR>gv=gv
-else
-  nnoremap <A-j> :m .+1<CR>==
-  nnoremap <A-k> :m .-2<CR>==
-  inoremap <A-j> <Esc>:m .+1<CR>==gi
-  inoremap <A-k> <Esc>:m .-2<CR>==gi
-  vnoremap <A-j> :m '>+1<CR>gv=gv
-  vnoremap <A-k> :m '<-2<CR>gv=gv
-endif
-
 " Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
@@ -79,9 +62,7 @@ nnoremap <silent> <Leader>v+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 
 " Git
-nnoremap <silent> <Leader>gk :Agit <CR>
 nnoremap <silent> <Leader>gd :Gdiff <CR>
-nnoremap <silent> <Leader>gf :GFiles <CR>
 nnoremap <silent> <Leader>gb :Gblame <CR>
 nnoremap <silent> <Leader>gs :Gstatus <CR>
 nnoremap <silent> <Leader>gc :Gcommit <CR>
@@ -103,21 +84,6 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 tnoremap <C-w>w <C-\><C-n><C-w>w
 tnoremap <C-w>q <C-\><C-n>: bd!<CR>
 
-let g:incsearch#auto_nohlsearch = 1
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *   <Plug>(asterisk-*)
-map #   <Plug>(asterisk-#)
-map g*  <Plug>(asterisk-g*)
-map g#  <Plug>(asterisk-g#)
-map z*  <Plug>(asterisk-z*)
-map z#  <Plug>(asterisk-z#)
-map gz* <Plug>(asterisk-gz*)
-map gz# <Plug>(asterisk-gz#)
-
 augroup go
   autocmd!
 
@@ -135,12 +101,6 @@ augroup go
   autocmd FileType go nmap <silent> <leader>e  <Plug>(go-install)
 
   autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
-
-  " I like these more!
-  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-  autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 augroup END
 
 nmap <silent> [s <Plug>(ale_previous_wrap)
@@ -149,6 +109,8 @@ nmap <leader>= <Plug>(ale_fix)
 
 " <Tab>
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
