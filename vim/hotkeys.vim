@@ -4,6 +4,14 @@
 
 let mapleader = '\'
 
+inoremap <c-u> <esc>hviwUea
+
+"exit insert more with jj
+inoremap jj <ESC>
+
+"classic C-a to select all document
+nnoremap <C-a> ggVG
+
 " Duplicate lines
 nnoremap <Leader>d m`YP``
 vnoremap <Leader>d YPgv
@@ -149,6 +157,9 @@ cnoreabbrev Qall qall
 
 " disable command history
 map q: :
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
 
 function! s:my_cr_function()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"

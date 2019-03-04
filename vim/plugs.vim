@@ -29,7 +29,6 @@ Plug 'jiangmiao/auto-pairs'
 
 " --- search ---
 Plug 'junegunn/vim-slash'
-Plug 'rizzatti/dash.vim'
 
 " --- Files ---
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind']}
@@ -41,7 +40,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
 Plug 'wokalski/autocomplete-flow', {'for': ['javascript', 'javascript.jsx']}
-Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'javascript.jsx']}
+Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'javascript.jsx'], 'branch': 'main'}
+
 Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 

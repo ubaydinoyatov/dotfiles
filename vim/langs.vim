@@ -8,10 +8,6 @@ call deoplete#custom#option('sources', {
   \ 'javascript.jsx': ['flow', 'neosnippet', 'buffer', 'file'],
   \})
 
-"" Deoplete-tern settings
-let g:tern_request_timeout = 1
-let g:tern_show_signature_in_pum = 1
-
 " To close preview window of deoplete automagically
 autocmd CompleteDone * pclose
 

@@ -91,6 +91,7 @@ set autoread
 set mouse=a                           " enable mouse support
 set mousehide                         " hide the mouse cursor while typing
 set whichwrap=b,s,h,l,<,>,[,]         " backspace and cursor keys wrap too
+set history=50
 
 " Activate a permanent ruler and add line highlightng as well as numbers.
 " Also disable the sucking pydoc preview window for the omni completion
@@ -145,11 +146,12 @@ autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 let g:ale_linters = {}
 let g:ale_linters.html = []
 let g:ale_linters.python = ['flake8']
-let g:ale_linters.javascript = ['eslint']
+let g:ale_linters.javascript = ['flow', 'eslint']
 let g:ale_fixers = {}
 let g:ale_fixers.python = ['isort']
 let g:ale_fixers.javascript = ['prettier-eslint', 'eslint']
 let g:ale_maximum_file_size = 50000  " Don't lint large files (> 500KB), it can slow things down
+
 " Make prettier play nicely with eslint-airbnb
 let g:ale_javascript_prettier_options = ' --single-quote --trailing-comma all'
 
