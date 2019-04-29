@@ -20,6 +20,7 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header': ['fg', 'Comment'] }
 
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 function! s:fzf_statusline()
   highlight default fzf1 ctermbg=237 guifg=#fb4934 guibg=#3c3836

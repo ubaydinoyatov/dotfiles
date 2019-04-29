@@ -1,5 +1,4 @@
 " --- Airline ---
-let g:airline_theme='gruvbox'
 let g:airline_detect_crypt = 0
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -8,13 +7,13 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnametruncate = 0
 let g:airline#extensions#tabline#buffers_label = 'BUFFERS'
 let g:airline#extensions#tabline#tabs_label = 'TABS'
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#hunks#enabled = 0
 
 let spc = "\ua0"
 let g:airline_powerline_fonts = 1

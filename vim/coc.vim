@@ -1,0 +1,72 @@
+" CoC
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <silent><expr> <cr>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+let g:coc_snippet_next = '<Tab>'
+let g:coc_snippet_prev = '<S-Tab>'
+
+nnoremap <leader>es :call OpenSnippetFile()<cr>
+nnoremap <leader>ec :CocConfig<cr>
+
+" Diagnostics Navigate
+nmap <silent>[[ <Plug>(coc-diagnostic-prev)
+nmap <silent>]] <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent>K :call <SID>showDocumentation()<cr>
+
+" rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for do codeAction of selected region, current line or motion. ex: `<leader>aap` for current paragraph
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>ac <Plug>(coc-codeaction)
+
+" Fix autofix problem of current line
+nmap <leader>af <Plug>(coc-fix-current)
+
+" Prettier format action
+nnoremap <leader>fd :<C-u>CocCommand prettier.formatFile<cr>
+
+" Commands List
+nnoremap <leader>c :<C-u>CocList commands<cr>
+
+" Find symbol of current document
+nnoremap <leader>s :<C-u>CocList outline<cr>
+
+" Find symbol of workspace
+nnoremap <leader>S :<C-u>CocList -I symbols<cr>
+
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! s:showDocumentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  elseif &filetype == 'tmux'
+    call tmux#man()
+  else
+    call CocAction('doHover')
+  endif
+endfunction

@@ -1,130 +1,26 @@
-"=====================================================
-" General settings
-"=====================================================
-
-syntax on
-set t_Co=256
-set cursorline
-set termguicolors
-set background=dark
 colorscheme gruvbox
 let g:gruvbox_terminal_colors = 1
+set t_Co=256
 set t_AB=^[[48;5;%dm
 set t_AF=^[[38;5;%dm
-
-set number
-set relativenumber
-set backspace=indent,eol,start
-
-set nobackup
-set noswapfile
-set nowritebackup
-
-" set fillchar
-set fillchars+=vert:│
-
-" hide cmd
-set noshowcmd
-
-set nowrap
-
-" indent
-set cindent
-set autoindent
-set smartindent
-
-" show wildmenu
-set wildmenu
-
-" do not break words.
-set linebreak
-
-" tab options:
-set smarttab
-set tabstop=4
-set noexpandtab
-set shiftwidth=4
-set softtabstop=0
-
-" no fold enable
-set nofoldenable
-
-set matchtime=0
-set showmatch
-set showmode
-set complete=.,w,b,u,t
-
-" limit completion menu height
-set pumheight=15
-set incsearch
-set hlsearch
-set laststatus=2
-set wildignorecase
-set hidden
-set ttimeout
-set lazyredraw
-set inccommand=nosplit
-
-" scrolling
-set scrolloff=4
-set sidescrolloff=8
-set sidescroll=1
-
-" updatetime, default 4000
-set updatetime=100
-
-" menuone: show the pupmenu when only one match
-" disable preview scratch window,
-set completeopt=menu,menuone,longest
-
-" Mark tabs and trailing spaces
-set list listchars=nbsp:·,tab:→\ ,trail:·,extends:>,precedes:<
-set listchars=tab:>·,trail:·,nbsp:¬
-
-" Set character encoding to use in vim
-set encoding=utf-8
-
-" Auto reload changed files
-set autoread
-
-" interaction
-set mouse=a                           " enable mouse support
-set mousehide                         " hide the mouse cursor while typing
-set whichwrap=b,s,h,l,<,>,[,]         " backspace and cursor keys wrap too
-set history=50
-
-" Activate a permanent ruler and add line highlightng as well as numbers.
-" Also disable the sucking pydoc preview window for the omni completion
-" and highlight current line and disable the blinking cursor.
-set ruler
-set gcr=a:blinkon0
-set ttyfast
-
-" Customize the wildmenu
-set wildmenu
-set wildignore+=*.dll,*.o,*.pyc,*.bak,*.exe,*.jpg,*.jpeg,*.png,*.gif,*$py.class,*.class,*/*.dSYM/*,*.dylib
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/tmp/*,*.so,*.swp,*.zip,*node_modules*
-set wildmode=longest:full,full
-
-" Hide some panels
-set guioptions-=m " Hide menu bar.
-set guioptions-=T " Hide toolbar
-set guioptions-=L " Hide left-hand scrollbar
-set guioptions-=r " Hide right-hand scrollbar
-set guioptions-=b " Hide bottom scrollbar
-set guioptions-=e " Hide tab
-set showtabline=0 " Hide tabline
-
-" Open new split panes to right and bottom
-set splitbelow
-set splitright
-
-set concealcursor=
 
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
+
+" Reduce delay when switching between modes.
+augroup NoInsertKeycodes
+  autocmd!
+  autocmd InsertEnter * set ttimeoutlen=0
+  autocmd InsertLeave * set ttimeoutlen=500
+augroup END
+
+" Add all TODO items to the quickfix list relative to where you opened Vim.
+command! Todo call s:todo()
+
+" Auto-resize splits when Vim gets resized.
+autocmd VimResized * wincmd =
 
 " Make sure Vim returns to the same line when you reopen a file.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -134,31 +30,32 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
 autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
 autocmd BufEnter * :syntax sync fromstart " ensure every file does syntax highlighting (full)
 autocmd BufEnter * call CleanEmptyBuffers()
+autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
 
-set nocompatible " be iMproved, required
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 
 " Async linting
-let g:ale_linters = {}
-let g:ale_linters.html = []
-let g:ale_linters.python = ['flake8']
-let g:ale_linters.javascript = ['flow', 'eslint']
-let g:ale_fixers = {}
-let g:ale_fixers.python = ['isort']
-let g:ale_fixers.javascript = ['prettier-eslint', 'eslint']
-let g:ale_maximum_file_size = 50000  " Don't lint large files (> 500KB), it can slow things down
+let g:ale_linters = {
+  \  'javascript': ['flow', 'eslint'],
+  \  'json':       ['jsonlint'],
+  \  'python':     ['flake8'],
+  \  'markdown':   ['mdl'],
+  \}
+let g:ale_fixers = {
+  \  'javascript': ['prettier-eslint', 'eslint'],
+  \  'python':     ['isort'],
+  \}
+
+" Don't lint large files (> 500KB), it can slow things down
+let g:ale_maximum_file_size = 50000
 
 " Make prettier play nicely with eslint-airbnb
 let g:ale_javascript_prettier_options = ' --single-quote --trailing-comma all'
 
 let g:rooter_silent_chdir = 1
-
-let g:neosnippet#snippets_directory='~/.dotfiles/vim/snippets'
-let g:neosnippet#enable_completed_snippet = 1
 
 " Start Banner
 let g:startify_files_number = 6
@@ -204,13 +101,19 @@ let g:startify_list_order = [
   \ ]
 autocmd FileType startify setlocal scrolloff=0 nowrap
 
+" Unset paste on InsertLeave.
+autocmd InsertLeave * silent! set nopaste
+
 " NERDTree
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', '\.log$', '\.o$', '__pycache__$']
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
 let NERDTreeWinSize = 30
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeAutoDeleteBuffer = 1
+
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -233,6 +136,9 @@ let g:gitgutter_sign_modified_removed = '∙'
 autocmd FileType html,htmljinja,htmldjango,xml,javascript.jsx EmmetInstall
 autocmd FileType css,less,scss setlocal iskeyword+=-
 
+" Make sure all types of requirements.txt files get syntax highlighting.
+autocmd BufNewFile,BufRead requirements*.txt set syntax=python
+
 " Default file explore
 let g:netrw_altv = 1
 let g:netrw_banner = 0
@@ -245,5 +151,24 @@ function! CleanEmptyBuffers()
   let buffers = filter(range(1, bufnr('$')), 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val)<0 && !getbufvar(v:val, "&mod")')
   if !empty(buffers)
     exe 'bw ' . join(buffers, ' ')
+  endif
+endfunction
+
+function! s:todo() abort
+  let entries = []
+  for cmd in ['git grep -niIw -e TODO -e FIXME 2> /dev/null',
+            \ 'grep -rniIw -e TODO -e FIXME . 2> /dev/null']
+    let lines = split(system(cmd), '\n')
+    if v:shell_error != 0 | continue | endif
+    for line in lines
+      let [fname, lno, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
+      call add(entries, { 'filename': fname, 'lnum': lno, 'text': text })
+    endfor
+    break
+  endfor
+
+  if !empty(entries)
+    call setqflist(entries)
+    copen
   endif
 endfunction

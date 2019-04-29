@@ -9,6 +9,18 @@ inoremap <c-u> <esc>hviwUea
 "exit insert more with jj
 inoremap jj <ESC>
 
+" Move by visual line when wrapping (not real lines)
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+inoremap <expr><Down> pumvisible() ? '<C-n>' : '<C-o>gj'
+inoremap <expr><Up> pumvisible() ? '<C-p>' : '<C-o>gk'
+
+" " Center window when moving up and down
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
 "classic C-a to select all document
 nnoremap <C-a> ggVG
 
@@ -61,7 +73,6 @@ nnoremap <silent> <Leader>fg :Ag<CR>
 xnoremap <silent> <Leader>fg y:Ag <C-R>"<CR>
 
 nnoremap <silent> <C-p> :call NerdToggle()<CR>
-nnoremap <silent> <Leader>tt :TagbarToggle<CR>
 
 " Window
 nnoremap <silent> <Leader>+ :resize +5<CR>
@@ -73,7 +84,9 @@ nnoremap <silent> <Leader>v- :vertical resize -5<CR>
 nnoremap <silent> <Leader>gd :Gdiff <CR>
 nnoremap <silent> <Leader>gb :Gblame <CR>
 nnoremap <silent> <Leader>gs :Gstatus <CR>
+nnoremap <silent> <Leader>gh :GitGutterStageHunk<CR>
 nnoremap <silent> <Leader>gc :Gcommit <CR>
+nnoremap <silent> <Leader>gk :Commits <CR>
 nnoremap <silent> <Leader>go :.Gbrowse <CR>
 
 nnoremap <silent> <Leader>hf :History <CR>
@@ -115,14 +128,6 @@ nmap <silent> [s <Plug>(ale_previous_wrap)
 nmap <silent> ]s <Plug>(ale_next_wrap)
 nmap <leader>= <Plug>(ale_fix)
 
-" <Tab>
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-
 " Improve scroll, credits: https://github.com/Shougo
 nnoremap <expr> zz (winline() == (winheight(0)+1) / 2) ?
   \ 'zt' : (winline() == 1) ? 'zb' : 'zz'
@@ -161,19 +166,13 @@ map q: :
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-
 function! NerdToggle()
   if bufname('%') == '' || &readonly || !filereadable(bufname('$'))
     exe "NERDTreeToggle"
+  elseif exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+    exe "NERDTreeClose"
   else
-    if exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
-      exe "NERDTreeClose"
-    else
-      exe "NERDTreeFind"
-    endif
+    exe "NERDTreeFind"
   endif
 endfunction
 

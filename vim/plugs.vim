@@ -11,21 +11,19 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-expand-region'
-Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'jiangmiao/auto-pairs'
 
 " --- Lint ---
 Plug 'w0rp/ale'
 
-" --- Autocomplete ---
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'Shougo/neco-syntax'
-Plug 'Shougo/context_filetype.vim'
-Plug 'Shougo/neoinclude.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neopairs.vim'
-Plug 'jiangmiao/auto-pairs'
+" --- Coc ---
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
+Plug 'neoclide/coc-html', {'do': 'yarn install'}
+Plug 'neoclide/coc-css', {'do': 'yarn install'}
+Plug 'neoclide/coc-json', {'do': 'yarn install'}
 
 " --- search ---
 Plug 'junegunn/vim-slash'
@@ -38,17 +36,15 @@ Plug 'junegunn/fzf.vim'
 
 " --- Javascript ---
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
-Plug 'mxw/vim-jsx', {'for': ['javascript', 'javascript.jsx']}
-Plug 'wokalski/autocomplete-flow', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mxw/vim-jsx', {'for': 'javascript.jsx'}
 Plug 'styled-components/vim-styled-components', {'for': ['javascript', 'javascript.jsx'], 'branch': 'main'}
-
-Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 
 " --- HTML, Xml ---
 Plug 'othree/html5.vim', {'for': ['htm', 'html']}
 Plug 'mattn/emmet-vim', {'on': 'EmmetInstall'}
 Plug 'Valloric/MatchTagAlways', {'for': ['htm', 'html' , 'xhtml' , 'xml']}
+Plug 'digitaltoad/vim-pug', {'for': 'jade'}
 
 " --- Styles ---
 Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
@@ -60,11 +56,9 @@ Plug 'wavded/vim-stylus', {'for ': 'styl'}
 " --- Python ---
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
 
 " --- Go ---
 Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'zchee/deoplete-go', {'for': 'go', 'do': 'make'}
 
 " --- Git ---
 Plug 'tpope/vim-fugitive'
