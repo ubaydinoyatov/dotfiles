@@ -138,6 +138,7 @@ autocmd FileType css,less,scss setlocal iskeyword+=-
 
 " Make sure all types of requirements.txt files get syntax highlighting.
 autocmd BufNewFile,BufRead requirements*.txt set syntax=python
+autocmd BufNewFile,BufRead *.pug.html set syntax=pug
 
 " Default file explore
 let g:netrw_altv = 1

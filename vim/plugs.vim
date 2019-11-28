@@ -18,7 +18,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'w0rp/ale'
 
 " --- Coc ---
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
 Plug 'neoclide/coc-html', {'do': 'yarn install'}
@@ -44,7 +44,7 @@ Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'othree/html5.vim', {'for': ['htm', 'html']}
 Plug 'mattn/emmet-vim', {'on': 'EmmetInstall'}
 Plug 'Valloric/MatchTagAlways', {'for': ['htm', 'html' , 'xhtml' , 'xml']}
-Plug 'digitaltoad/vim-pug', {'for': 'jade'}
+Plug 'digitaltoad/vim-pug', {'for': ['html', 'htm', 'pug']}
 
 " --- Styles ---
 Plug 'JulesWang/css.vim', {'for': ['css', 'less', 'scss']}
