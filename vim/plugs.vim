@@ -14,15 +14,15 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 
-" --- Lint ---
-Plug 'w0rp/ale'
-
 " --- Coc ---
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install'}
 Plug 'neoclide/coc-html', {'do': 'yarn install'}
 Plug 'neoclide/coc-css', {'do': 'yarn install'}
+Plug 'fannheyward/coc-styled-components', {'do': 'yarn install'}
 Plug 'neoclide/coc-json', {'do': 'yarn install'}
 
 " --- search ---
@@ -56,9 +56,6 @@ Plug 'wavded/vim-stylus', {'for ': 'styl'}
 " --- Python ---
 Plug 'vim-python/python-syntax', {'for': 'python'}
 Plug 'Vimjas/vim-python-pep8-indent', {'for': 'python'}
-
-" --- Go ---
-Plug 'fatih/vim-go', {'for': 'go'}
 
 " --- Git ---
 Plug 'tpope/vim-fugitive'

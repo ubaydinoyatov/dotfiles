@@ -4,24 +4,23 @@
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": ">",
   "diagnostic.hintSign": "→",
+
   // suggest
   "suggest.noselect": true,
   "suggest.maxCompleteItemCount": 50,
   "suggest.maxPreviewWidth": 80,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": true,
-  // coc source
-  "coc.source.word.filetypes": [
-    "markdown",
-    "gitcommit",
-    "gina-commit"
-  ],
+
   // tsserver
+  "tsserver.npm": "/usr/local/bin/npm",
   "tsserver.formatOnType": false,
+
   // javascript
   "javascript.validate.enable": false,
   "javascript.suggest.autoImports": false,
   "javascript.preferences.quoteStyle": "single",
+
   // snippets
   "snippets.extends" : {
     "javascriptreact": ["javascript"],
@@ -34,7 +33,9 @@
     "~/.dotfiles/ultisnips"
   ],
   "snippets.snipmate.enable": false,
+
   // prettier
+  "prettier.singleQuote": true,
   "prettier.eslintIntegration": true,
   "prettier.tslintIntegration": true,
   "prettier.stylelintIntegration": true

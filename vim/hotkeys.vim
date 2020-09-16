@@ -108,29 +108,6 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 tnoremap <C-w>w <C-\><C-n><C-w>w
 tnoremap <C-w>q <C-\><C-n>: bd!<CR>
 
-augroup go
-  autocmd!
-
-  autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
-  autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-split)
-
-  autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
-
-  autocmd FileType go nmap <silent> <Leader>i <Plug>(go-info)
-  autocmd FileType go nmap <silent> <Leader>l <Plug>(go-metalinter)
-
-  autocmd FileType go nmap <silent> <leader>b :<C-u>call <SID>build_go_files()<CR>
-  autocmd FileType go nmap <silent> <leader>t  <Plug>(go-test)
-  autocmd FileType go nmap <silent> <leader>r  <Plug>(go-run)
-  autocmd FileType go nmap <silent> <leader>e  <Plug>(go-install)
-
-  autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
-augroup END
-
-nmap <silent> [s <Plug>(ale_previous_wrap)
-nmap <silent> ]s <Plug>(ale_next_wrap)
-nmap <leader>= <Plug>(ale_fix)
-
 " Improve scroll, credits: https://github.com/Shougo
 nnoremap <expr> zz (winline() == (winheight(0)+1) / 2) ?
   \ 'zt' : (winline() == 1) ? 'zb' : 'zz'

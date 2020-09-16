@@ -40,18 +40,13 @@ nmap <leader>ac <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>af <Plug>(coc-fix-current)
 
-" Prettier format action
-nnoremap <leader>fd :<C-u>CocCommand prettier.formatFile<cr>
-
 " Commands List
 nnoremap <leader>c :<C-u>CocList commands<cr>
 
-" Find symbol of current document
-nnoremap <leader>s :<C-u>CocList outline<cr>
-
-" Find symbol of workspace
-nnoremap <leader>S :<C-u>CocList -I symbols<cr>
-
+" Prettier format action
+vmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
+nnoremap <leader>= :<C-u>CocCommand prettier.formatFile<cr>
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')

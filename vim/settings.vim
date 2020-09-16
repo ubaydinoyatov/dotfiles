@@ -37,24 +37,6 @@ autocmd BufWinEnter quickfix nnoremap <silent> <buffer>q :cclose<cr>:lclose<cr>
 
 autocmd VimEnter * nested if argc() > 1 && !&diff | tab sball | tabfirst | endif
 
-" Async linting
-let g:ale_linters = {
-  \  'javascript': ['flow', 'eslint'],
-  \  'json':       ['jsonlint'],
-  \  'python':     ['flake8'],
-  \  'markdown':   ['mdl'],
-  \}
-let g:ale_fixers = {
-  \  'javascript': ['prettier-eslint', 'eslint'],
-  \  'python':     ['isort'],
-  \}
-
-" Don't lint large files (> 500KB), it can slow things down
-let g:ale_maximum_file_size = 50000
-
-" Make prettier play nicely with eslint-airbnb
-let g:ale_javascript_prettier_options = ' --single-quote --trailing-comma all'
-
 let g:rooter_silent_chdir = 1
 
 " Start Banner
