@@ -122,6 +122,9 @@ autocmd FileType css,less,scss setlocal iskeyword+=-
 autocmd BufNewFile,BufRead requirements*.txt set syntax=python
 autocmd BufNewFile,BufRead *.pug.html set syntax=pug
 
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 " Default file explore
 let g:netrw_altv = 1
 let g:netrw_banner = 0

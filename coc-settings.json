@@ -23,8 +23,9 @@
 
   // snippets
   "snippets.extends" : {
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
+    "typescript": ["javascript"],
+    "typescriptreact": ["javascript"],
+    "javascriptreact": ["javascript"]
   },
   "snippets.trace": "verbose",
   "snippets.ultisnips.enable": true,
